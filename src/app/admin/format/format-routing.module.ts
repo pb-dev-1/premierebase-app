@@ -11,12 +11,12 @@ const routes: Routes = [
     component: ListComponent
   },
   {
-    path: ':id/edit',
-    component: EditComponent
-  },
-  {
     path: 'new',
     component: NewComponent
+  },
+  {
+    path: ':id/edit',
+    component: EditComponent
   },
 ]
 

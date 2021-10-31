@@ -27,7 +27,6 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
   /*{path: 'contact', component: ContactComponent},*/
-  {path: '*', component: HomeComponent},
 ]
 
 @NgModule({

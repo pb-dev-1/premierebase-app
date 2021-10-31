@@ -3,10 +3,6 @@ import {Routes, RouterModule} from '@angular/router'
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./illustration/illustration.module').then(m => m.IllustrationModule)
-  },
-  {
     path: 'illustrations',
     loadChildren: () => import('./illustration/illustration.module').then(m => m.IllustrationModule)
   },
@@ -25,10 +21,6 @@ const routes: Routes = [
   {
     path: 'themes',
     loadChildren: () => import('./theme/theme.module').then(m => m.ThemeModule)
-  },
-  {
-    path: '*',
-    loadChildren: () => import('./illustration/illustration.module').then(m => m.IllustrationModule)
   },
 ]
 

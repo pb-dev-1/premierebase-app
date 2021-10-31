@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: 'http://localhost:3000/api',
-  uploads: 'http://localhost:3000/uploads/',
+  uploads: 'https://premierebase-dev.s3.eu-west-3.amazonaws.com/',
 }
 
 /*
