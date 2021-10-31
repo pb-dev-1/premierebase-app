@@ -1,0 +1,18 @@
+@import 'src/colors';
+
+:host {
+  a {
+    color: $pb-black;
+    text-decoration: none;
+
+    &:hover {
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    mat-icon {
+      margin-right: 5px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import 'src/colors';
+
+:host {
+  .illustrations {
+    text-align: center;
+    padding: 50px 0;
+
+    h1 {
+      margin-block-start: 0;
+      margin-block-end: 50px;
+    }
+  }
+}

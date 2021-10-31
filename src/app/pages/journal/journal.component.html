@@ -1,0 +1,21 @@
+<pb-page-layout color="black">
+  <ng-container page>
+    <div class="journal">
+      <h1>{{'JOURNAL.TITLE' | translate}}</h1>
+      
+      <ngx-masonry class="mansory-list" [options]="masonryOptions">
+        <div
+          ngxMasonryItem
+          *ngFor="let image of masonryImages"
+          [prepend]="false"
+          class="masonry-item"
+        >
+          <img [src]="image">
+        </div>
+      </ngx-masonry>
+    </div>
+
+    <pb-newsletter></pb-newsletter>
+    <pb-footer></pb-footer>
+  </ng-container>
+</pb-page-layout>

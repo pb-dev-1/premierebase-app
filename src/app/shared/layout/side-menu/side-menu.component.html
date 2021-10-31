@@ -1,0 +1,10 @@
+<div class="side-nav">
+    <ul>
+        <li *ngFor="let nav of navs">
+            <a class="side-nav-link {{color}}"
+            [class.active]="route === nav.route"
+            (click)="navigate(nav.route)"
+            >{{nav.text | translate}}</a>
+        </li>
+    </ul>
+</div>

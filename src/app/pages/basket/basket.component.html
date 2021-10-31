@@ -1,0 +1,55 @@
+<pb-page-layout color="black">
+  <ng-container page>
+    <div class="basket">
+      <h1>{{'BASKET.TITLE' | translate}}</h1>
+
+      <table mat-table [dataSource]="savedProducts$ | async" class="mat-elevation-z8">
+        <ng-container matColumnDef="packshot">
+          <th mat-header-cell *matHeaderCellDef translate>BASKET.PRODUCT</th>
+          <td mat-cell *matCellDef="let element">
+            <img
+              class="item-img"
+              [src]="env.uploads + element.image"
+              [alt]="element.label"
+            >
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="label">
+          <th mat-header-cell *matHeaderCellDef translate>BASKET.LABEL</th>
+          <td mat-cell *matCellDef="let element"> {{element.label}} - {{element.format.format.label}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef translate>BASKET.PRICE</th>
+          <td mat-cell *matCellDef="let element"> {{element.format.price[0]}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef translate>BASKET.QUANTITY</th>
+          <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef translate>BASKET.TOTAL</th>
+          <td mat-cell *matCellDef="let element"> {{element.format.price[0] * element.quantity}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="removeFromBasket(element)">
+                <mat-icon>close</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <pb-newsletter></pb-newsletter>
+    <pb-footer></pb-footer>
+  </ng-container>
+</pb-page-layout>

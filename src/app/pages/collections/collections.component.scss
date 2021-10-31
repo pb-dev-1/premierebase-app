@@ -1,0 +1,48 @@
+@import 'src/colors';
+
+:host {
+  .collections {
+    padding: 50px;
+
+    h1 {
+      margin-block-start: 0;
+      margin-block-end: 70px;
+      text-align: center;
+    }
+
+    .collection-container {
+      margin-bottom: 150px;
+      position: relative;
+
+      .collection-infos {
+        padding: 0 50px;
+
+        h1 {
+          text-align: left;
+          margin-block-end: 10px;
+        }
+
+        h5 {
+          margin: 15px 0 20px;
+          font-weight: 500;
+          font-size: 16px;
+        }
+      }
+
+      .collection-img {
+        max-width: 100%;
+      }
+
+      .collection-products {
+        position: absolute;
+        top: 50%;
+        width: 900px;
+
+        .article-img {
+          max-width: 250px;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,13 @@
+<pb-page-layout color="black">
+  <ng-container page>
+    <div class="illustrations">
+
+      <h1>{{'ILLUSTRATIONS.TITLE' | translate}}</h1>
+
+      <pb-items-container [items]="illustrations$ | async"></pb-items-container>
+
+      <pb-newsletter></pb-newsletter>
+      <pb-footer></pb-footer>
+    </div>
+  </ng-container>
+</pb-page-layout>

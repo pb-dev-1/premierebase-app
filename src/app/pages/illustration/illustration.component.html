@@ -1,0 +1,109 @@
+<pb-page-layout color="black">
+  <ng-container page>
+
+    <div *ngIf="illustration" class="illustration">
+      
+      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" fxLayoutGap="50px" fxLayoutGap.gt-xs="70px">
+        <div fxLayout="column-reverse" fxLayout.gt-xs="row" fxLayoutGap="30px" fxLayoutGap.gt-xs="70px">
+          <div fxLayout="row" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="flex-end" fxLayoutGap="10px">
+            <img
+              class="image-mini"
+              [ngClass]="{'selected': this.selectedImage === illustration.images.packShot}"
+              [src]="env.uploads + illustration.images.packShot"
+              (click)="selectImage(illustration.images.packShot)"
+            >
+            <img
+              class="image-mini"
+              [ngClass]="{'selected': this.selectedImage === illustration.images.settingScene}"
+              [src]="env.uploads + illustration.images.settingScene"
+              (click)="selectImage(illustration.images.settingScene)"
+            >
+            <ng-container *ngFor="let detail of illustration.images.details">
+              <img
+                class="image-mini"
+                [ngClass]="{'selected': this.selectedImage === detail}"
+                [src]="env.uploads + detail"
+                (click)="selectImage(detail)"
+              >
+            </ng-container>
+          </div>
+          <div class="image-container">
+            <img [src]="env.uploads + this.selectedImage">
+          </div>
+        </div>
+
+        <div class="info-container">
+          <h1>{{illustration.label}}</h1>
+          <p>{{illustration.category.label}}</p>
+          <p></p>
+
+          <mat-form-field appearance="standard">
+            <mat-label translate>ILLUSTRATION.FORMAT</mat-label>
+            <mat-select [(ngModel)]="selectedFormat">
+              <mat-option *ngFor="let format of illustration.formats" [value]="format.format._id">
+                {{format.format.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="quantity-container">
+            <div class="quantity-title" translate>ILLUSTRATION.QUANTITY</div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="quantity-input">
+              <button mat-button [disabled]="selectedQuantity < 2" (click)="decrease()">
+                <mat-icon>remove</mat-icon>
+              </button>
+             
+              <span>{{selectedQuantity}}</span>
+              <button mat-button [disabled]="selectedQuantity >= illustration.stock" (click)="increase()">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
+          </div>
+         
+          <p>{{'ILLUSTRATION.STOCK' | translate: {stock: illustration.stock} }}</p>
+          <p class="price">{{getPrice()}}</p>
+          <pb-generic-button
+            [label]="'ILLUSTRATION.ORDER' | translate"
+            (click)="addToCart()"
+          ></pb-generic-button>
+        </div>
+      </div>
+
+      <mat-tab-group>
+        <mat-tab [label]="'ILLUSTRATION.DETAILS' | translate">
+          {{illustration.details}}
+        </mat-tab>
+        <mat-tab [label]="'ILLUSTRATION.DELIVERY' | translate">
+          Content 2
+        </mat-tab>
+        <mat-tab [label]="'ILLUSTRATION.FORMATS' | translate">
+          Content 3
+        </mat-tab>
+      </mat-tab-group>
+
+
+      <div *ngIf="(similarIllustrations$ | async)?.length" class="section">
+        <h2 translate>ILLUSTRATION.SIMILAR_PRODUCTS</h2>
+        <pb-items-container [items]="similarIllustrations$ | async"></pb-items-container>
+      </div>
+
+      <div *ngIf="illustration.collec" class="section">
+        <h2>{{illustration.collec.label}}</h2>
+        <ngx-masonry class="mansory-list" [options]="masonryOptions">
+          <div
+            ngxMasonryItem
+            *ngFor="let image of illustration.collec?.images?.details.slice(0, 6)"
+            [prepend]="false"
+            class="masonry-item"
+          >
+            <img [src]="env.uploads + image">
+          </div>
+        </ngx-masonry>
+      </div>
+    
+    </div>
+
+    <pb-newsletter></pb-newsletter>
+    <pb-footer></pb-footer>
+  </ng-container>
+</pb-page-layout>

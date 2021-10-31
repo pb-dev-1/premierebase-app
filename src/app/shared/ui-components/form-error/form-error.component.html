@@ -1,0 +1,5 @@
+<div *ngIf="submitted && field.errors" class="invalid-feedback">
+  <div *ngIf="field.errors['required']">{{'SHARED.FORM_ERROR.REQUIRED' | translate}}</div>
+  <div *ngIf="field.errors['minlength']">{{'SHARED.FORM_ERROR.MIN_LENGTH' | translate:{value: field?.errors?.minlength?.requiredLength} }}</div>
+  <div *ngIf="field.errors['email']">{{'SHARED.FORM_ERROR.EMAIL' | translate}}</div>
+</div>

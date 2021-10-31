@@ -1,0 +1,55 @@
+<div class="nav-bar">
+  <a routerLink="/">
+    <img class="logo" src="assets/images/logos/logo-2.png">
+  </a>
+
+  <div class="nav-bar-links" fxHide.lt-md [ngStyle]="{'color': color}">
+    <div class="nav-bar-link"
+         [class.active]="route === 'illustrations'"
+         (click)="navigate('admin/illustrations')"
+    >{{'NAV.TOP.ILLUSTRATION' | translate}}</div>
+
+    <div class="nav-bar-link"
+         [class.active]="route === 'collections'"
+         (click)="navigate('admin/collections')"
+    >{{'NAV.TOP.COLLECTION' | translate}}</div>
+
+    <div class="nav-bar-link"
+         [class.active]="route === 'categories'"
+         (click)="navigate('admin/categories')"
+    >{{'NAV.TOP.CATEGORY' | translate}}</div>
+
+    <div class="nav-bar-link"
+         [class.active]="route === 'formats'"
+         (click)="navigate('admin/formats')"
+    >{{'NAV.TOP.FORMAT' | translate}}</div>
+
+    <div class="nav-bar-link"
+         [class.active]="route === 'themes'"
+         (click)="navigate('admin/themes')"
+    >{{'NAV.TOP.THEME' | translate}}</div>
+
+
+  </div>
+
+  <div fxHide.gt-sm>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+  </div>
+
+</div>

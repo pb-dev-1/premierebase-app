@@ -1,0 +1,12 @@
+<pb-page-admin-layout>
+  <ng-container page>
+
+    <h1 translate>ADMIN.FORMAT.EDIT.TITLE</h1>
+
+    <pb-format-form
+      [format]="format$ | async"
+      (submitForm)="updateFormat($event)"
+    ></pb-format-form>
+
+  </ng-container>
+</pb-page-admin-layout>

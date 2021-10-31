@@ -1,0 +1,23 @@
+<div
+  fxLayout="column"
+  fxLayout.gt-sm="row"
+  fxLayoutAlign="center center"
+  fxLayoutGap="100px"
+  class="highlighted-item"
+>
+  <img [src]="item?.images.settingScene" [alt]="item?.label" class="highlighted-item-img">
+
+  <div
+    fxLayout="column"
+    fxLayoutAlign="space-between"
+    class="highlighted-item-info"
+  >
+    <div class="info">
+      <h3 class="info-title">{{item?.label}}</h3>
+      <h5 class="info-subtitle">{{item?.theme?.label}}</h5>
+      <p class="info-description">{{item?.details}}</p>
+    </div>
+
+    <pb-generic-button [label]="'SHARED.GENERIC_BUTTON.MORE_PRODUCT' | translate"></pb-generic-button>
+  </div>
+</div>

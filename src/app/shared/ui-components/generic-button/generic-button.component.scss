@@ -1,0 +1,12 @@
+@import 'src/colors';
+
+.generic-btn {
+  padding: 7px 45px;
+  border-radius: 0;
+  font-family: Fixture-Expanded-Regular, "Helvetica Neue", sans-serif;
+
+  &.primary {
+    background-color: $pb-black;
+    color: $pb-white;
+  }
+}

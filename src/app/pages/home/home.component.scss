@@ -1,0 +1,67 @@
+@import 'src/colors';
+
+:host {
+
+  .home {
+
+    .current-collection {
+      height: 85vh;
+      background: url('../../../assets/images/backgrounds/home/home-bg.png') no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    .section-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 45px 0;
+
+      .section-title {
+        margin: 0 0 45px;
+        text-align: center;
+        font-family: Fixture-Expanded-SemiBold, Roboto, sans-serif;
+      }
+
+      .section-title-2 {
+        margin: 0 0 45px;
+        font-family: Fixture-Expanded-SemiBold, Roboto, sans-serif;
+      }
+    }
+
+    .studio-image {
+      width: 100%;
+      background: url('../../../assets/images/backgrounds/home/studio-bg.png') no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    .studio-description {
+      padding: 0 75px;
+      max-width: 640px;
+
+      .section-title-2 {
+        margin-bottom: 32px;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-family: Fixture-Expanded-SemiBold, Roboto, sans-serif;
+        margin: 20px 0 0;
+      }
+
+      p {
+        font-size: 12px;
+        font-family: Fixture-Expanded-Light, Roboto, sans-serif;
+      }
+
+      pb-generic-button {
+        margin: 15px 0;
+      }
+    }
+
+    .collection-img {
+      max-width: 250px;
+    }
+  }
+
+}

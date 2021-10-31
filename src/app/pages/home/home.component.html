@@ -1,0 +1,108 @@
+<pb-page-layout color="white">
+  <ng-container page>
+
+    <div class="home">
+      <!-- Landing -->
+      <div class="current-collection">
+
+      </div>
+
+      <!-- Newest items -->
+      <div fxLayout="column" class="section-container">
+        <h2 class="section-title">{{'HOME.NEWEST_TITLE' | translate}}</h2>
+        <pb-items-container [items]="newestItems$ | async"></pb-items-container>
+      </div>
+
+      <!-- Highlighted item -->
+      <pb-highlighted-item *ngIf="highlightedItem$ | async" [item]="highlightedItem$ | async"></pb-highlighted-item>
+
+      <!-- Illustrations -->
+      <div
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        class="section-container"
+      >
+        <h2 class="section-title">{{'HOME.ILLUSTRATION_TITLE' | translate}}</h2>
+        <pb-items-container [items]="illustrations$ | async"></pb-items-container>
+        <pb-generic-button
+          *ngIf="(illustrations$ | async)?.length"
+          [label]="'SHARED.GENERIC_BUTTON.MORE_PRODUCT' | translate"
+        ></pb-generic-button>
+      </div>
+
+      <!-- Collections -->
+      <div class="section-container">
+         <div
+           fxLayout="row"
+           fxLayoutAlign="space-between"
+           class="section-title-container"
+         >
+           <h2 class="section-title-2">{{'HOME.COLLECTIONS_TITLE' | translate}}</h2>
+           <pb-arrow-link
+             *ngIf="(collections$ | async)?.length"
+             [label]="'HOME.COLLECTIONS_LINK' | translate"
+             link="/collections"
+           ></pb-arrow-link>
+         </div>
+
+         <div fxLayout="row">
+           <img
+             *ngFor="let collection of collections$ | async"
+             class="collection-img"
+             [src]="env.uploads + collection.images.home"
+             [alt]="collection.label"
+           >
+         </div>
+
+        <p
+          *ngIf="!(collections$ | async)?.length"
+          style="padding: 0 50px;"
+        >Désolé ! Nous n'avons pas de collection pour le moment.</p>
+       </div>
+
+      <!-- Studio -->
+      <div fxLayout="column wrap" fxLayout.gt-xs="row wrap">
+        <div fxFlex="50%" class="studio-image"></div>
+        <div fxFlex="50%">
+          <div
+            fxLayout="column"
+            fxLayoutAlign="space-between"
+            class="studio-description"
+          >
+            <div>
+              <h2 class="section-title-2">{{'HOME.STUDIO_TITLE' | translate}}</h2>
+              <h5>{{'HOME.STUDIO.SECTION_1' | translate}}</h5>
+              <p>{{'HOME.STUDIO.DESCRIPTION_1' | translate}}</p>
+              <h5>{{'HOME.STUDIO.SECTION_2' | translate}}</h5>
+              <p>{{'HOME.STUDIO.DESCRIPTION_2' | translate}}</p>
+              <h5>{{'HOME.STUDIO.SECTION_3' | translate}}</h5>
+              <p>{{'HOME.STUDIO.DESCRIPTION_3' | translate}}</p>
+            </div>
+            <pb-generic-button [label]="'SHARED.GENERIC_BUTTON.DISCOVER_STUDIO' | translate"></pb-generic-button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collaboration -->
+      <div class="section-container">
+        <div
+          fxLayout="row"
+          fxLayoutAlign="space-between"
+          class="section-title-container"
+        >
+          <h2 class="section-title-2">{{'HOME.COLLECTION_TITLE' | translate}}</h2>
+          <pb-arrow-link [label]="'HOME.COLLECTION_LINK' | translate" link="/collections"></pb-arrow-link>
+        </div>
+
+        <p style="padding: 0 50px;">Désolé ! Nous n'avons pas de collaboration pour le moment.</p>
+      </div>
+
+      <pb-radio-banner></pb-radio-banner>
+      <pb-newsletter></pb-newsletter>
+      <pb-footer></pb-footer>
+    </div>
+
+  </ng-container>
+</pb-page-layout>
+
+

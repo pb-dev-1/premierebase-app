@@ -1,0 +1,30 @@
+:host {
+  .form-container {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 15px 30px;
+
+    .reset {
+      margin: 10px 0;
+    }
+
+    .image-container {
+      position: relative;
+
+      button {
+        position: absolute;
+        top: -15px;
+        right: -7px;
+      }
+    }
+
+    .item-img {
+      max-width: 250px;
+      margin-bottom: 25px;
+    }
+
+    .create {
+      margin: 30px 0 20px;
+    }
+  }
+}

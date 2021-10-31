@@ -1,0 +1,27 @@
+:host {
+  padding: 0 25px;
+
+  .item {
+    text-align: center;
+    margin-bottom: 35px;
+
+    &:hover {
+      .item-label, .item-price {
+        text-decoration: underline;
+      }
+    }
+
+    .item-img {
+      max-width: 100%;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    .item-label {}
+
+    .item-price {
+      font-family: Fixture-Expanded-Light, Roboto, sans-serif;
+    }
+  }
+}
+

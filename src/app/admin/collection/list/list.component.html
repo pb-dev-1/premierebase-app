@@ -1,0 +1,61 @@
+<pb-page-admin-layout>
+  <ng-container page>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <h1 translate>ADMIN.COLLECTION.LIST.TITLE</h1>
+      <button
+        routerLink="/admin/collections/new"
+        mat-mini-fab
+        color="primary"
+        aria-label="Create collection"
+      ><mat-icon>add</mat-icon></button>
+    </div>
+
+    <table mat-table [dataSource]="collections$ | async" class="mat-elevation-z8">
+      <ng-container matColumnDef="collection">
+        <th mat-header-cell *matHeaderCellDef translate>ADMIN.COLLECTION.LIST.COLLECTION</th>
+        <td mat-cell *matCellDef="let element">
+          <img
+            *ngIf="element?.images?.collections"
+            class="item-img"
+            [src]="env.uploads + element.images.collections"
+            [alt]="element.label"
+          >
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="label">
+        <th mat-header-cell *matHeaderCellDef translate>ADMIN.COLLECTION.LIST.LABEL</th>
+        <td mat-cell *matCellDef="let element"> {{element.label}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="theme">
+        <th mat-header-cell *matHeaderCellDef translate>ADMIN.COLLECTION.LIST.THEME</th>
+        <td mat-cell *matCellDef="let element"> {{element.theme.label}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef translate>ADMIN.COLLECTION.LIST.DESCRIPTION</th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <div fxLayout="row">
+            <button mat-icon-button color="primary" [routerLink]="['/admin/collections/' + element._id + '/edit']">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteCollection(element._id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </ng-container>
+</pb-page-admin-layout>

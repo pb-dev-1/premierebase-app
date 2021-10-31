@@ -1,0 +1,35 @@
+@import 'src/colors';
+
+:host {
+  .collection {
+    padding: 50px;
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+
+    h1 {
+      margin-block-start: 0;
+      margin-block-end: 70px;
+      text-align: center;
+      font-family: Fixture-Expanded-SemiBold, Roboto, sans-serif;
+
+      &.products {
+        margin-top: 15px;
+      }
+    }
+
+    .mansory-list {
+      margin: 0 auto;
+
+      .masonry-item {
+        width: 350px;
+        margin-bottom: 50px;
+        transition: top 0.4s ease-in-out, left 0.4s ease-in-out;
+       
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

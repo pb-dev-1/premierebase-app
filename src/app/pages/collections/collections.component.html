@@ -1,0 +1,43 @@
+<pb-page-layout color="black">
+  <ng-container page>
+    <div class="collections">
+
+      <h1>{{'COLLECTIONS.TITLE' | translate}}</h1>
+
+      <ng-container *ngFor="let collection of collections$ | async">
+        <div class="collection-container">
+
+          <div fxLayout="row">
+            <div fxFlex="1 1 60%">
+              <img class="collection-img" [src]="env.uploads + collection.images.collections" [alt]="collection.label">
+            </div>
+            <div fxFlex="1 1 40%" class="collection-infos">
+              <h1 class="collection-title">{{collection.label}}</h1>
+              <h5>{{collection.theme.label}}</h5>
+              <pb-arrow-link
+                [label]="'COLLECTIONS.COLLECTION_LINK' | translate"
+                [link]="'/collections/' + collection._id"
+              ></pb-arrow-link>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div
+              class="collection-products"
+              fxHide.lt-md="true"
+              fxLayout.gt-md="row wrap"
+              fxLayoutAlign="space-between center"
+            >
+              <pb-items-container [items]="collection?.products"></pb-items-container>
+            </div>
+          </div>
+
+
+        </div>
+      </ng-container>
+
+      <pb-newsletter></pb-newsletter>
+      <pb-footer></pb-footer>
+    </div>
+  </ng-container>
+</pb-page-layout>

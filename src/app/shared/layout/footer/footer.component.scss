@@ -1,0 +1,48 @@
+.footer-right {
+  width: 100%;
+  background: url('../../../../assets/images/backgrounds/footer/footer-bg.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.footer-left {
+  padding: 0 55px;
+  max-width: 465px;
+
+  .footer-title {
+    font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
+    font-size: 52px;
+    margin: 0 0 15px;
+  }
+
+  .footer-socials {
+    font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .footer-description {
+    font-family: Fixture-Expanded-Light, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    padding-right: 50px;
+    margin-bottom: 200px;
+    text-align: left;
+  }
+
+  .footer-menu {
+    font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
+    margin: 0;
+    list-style: none;
+    text-align: left;
+
+    li {
+      margin-bottom: 15px;
+    }
+  }
+
+  .footer-links {
+    font-size: 9px;
+    margin-bottom: 20px;
+  }
+}
+

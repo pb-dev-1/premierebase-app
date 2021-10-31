@@ -1,0 +1,36 @@
+:host {
+  .side-nav {
+    position: absolute;
+    top: calc(50% - 25px);
+    transform: translateY(-50%);
+    left: 5%;
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a.side-nav-link {
+          text-decoration: none;
+          cursor: pointer;
+
+          &.active {
+            font-weight: 500;
+          }
+
+          &.black {
+            color: black;
+          }
+          &.white {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<pb-page-layout color="black">
+  <ng-container page>
+
+    <div class="signup">
+      <h1>{{'SIGNUP.TITLE' | translate}}</h1>
+
+      <div class="signup-container" fxLayoutAlign="center center">
+        <form
+          fxLayout="column"
+          [formGroup]="signupForm"
+          (ngSubmit)="onSubmit(signupForm.value)"
+        >
+          <mat-form-field>
+            <mat-label>{{'SIGNUP.FIRST_NAME' | translate}}</mat-label>
+            <input formControlName="firstName" type="text" matInput>
+          </mat-form-field>
+          <pb-form-error [submitted]="submitted" [field]="this.signupForm.controls.firstName"></pb-form-error>
+
+          <mat-form-field>
+            <mat-label>{{'SIGNUP.NAME' | translate}}</mat-label>
+            <input formControlName="name" type="text" matInput>
+          </mat-form-field>
+          <pb-form-error [submitted]="submitted" [field]="this.signupForm.controls.name"></pb-form-error>
+
+          <mat-form-field>
+            <mat-label>{{'SIGNUP.EMAIL' | translate}}</mat-label>
+            <input formControlName="email" type="email" matInput>
+          </mat-form-field>
+          <pb-form-error [submitted]="submitted" [field]="this.signupForm.controls.email"></pb-form-error>
+
+          <mat-form-field>
+            <mat-label>{{'SIGNUP.PASSWORD' | translate}}</mat-label>
+            <input formControlName="password" type="password" matInput>
+          </mat-form-field>
+          <pb-form-error [submitted]="submitted" [field]="this.signupForm.controls.password"></pb-form-error>
+
+          <pb-generic-button
+            [label]="'SIGNUP.SUBMIT' | translate"
+            type="submit"
+          ></pb-generic-button>
+        </form>
+      </div>
+    </div>
+
+    <pb-footer></pb-footer>
+
+  </ng-container>
+</pb-page-layout>

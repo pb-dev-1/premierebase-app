@@ -1,0 +1,63 @@
+@import 'src/colors';
+
+:host {
+  .brand {
+    text-align: center;
+    padding: 50px 0 190px;
+    width: 100%;
+    overflow: hidden;
+
+    h1 {
+      margin-block-start: 0;
+      margin-block-end: 50px;
+    }
+
+    .inspiration {
+      font-size: 52px;
+      margin: 90px auto;
+      color: #dd4011;
+      max-width: 650px;
+      font-family: Fixture-Expanded-Bold, Roboto, sans-serif;
+    }
+
+    .history, .ambition {
+      font-size: 22px;
+      font-weight: 500;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+      font-family: Fixture-Expanded-Light, Roboto, sans-serif;
+    }
+
+    .banner {
+      margin: 90px 0;
+      font-size: 200px;
+      color: #dd4011;
+      font-family: Fixture-Expanded-ExtraBold, Roboto, sans-serif;
+      -webkit-animation: scrolling-right 20s linear infinite;
+      animation: scrolling-right 20s linear infinite;
+      white-space: nowrap;
+    }
+  }
+}
+
+
+@keyframes scrolling-right {
+  0% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes scrolling-right {
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+  }
+}

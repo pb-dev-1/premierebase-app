@@ -1,0 +1,169 @@
+<div fxLayout="column">
+  <mat-card class="form-container">
+    <form
+      [formGroup]="illustrationForm"
+      (ngSubmit)="onSubmit(illustrationForm.value)"
+      fxLayout="column"
+    >
+      <div fxLayout="row wrap">
+        <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
+          <mat-label translate>ADMIN.ILLUSTRATION.FORM.LABEL</mat-label>
+          <input matInput formControlName="label">
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
+          <mat-label translate>ADMIN.ILLUSTRATION.FORM.STOCK</mat-label>
+          <input matInput formControlName="stock">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row wrap">
+        <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
+          <mat-label translate>ADMIN.ILLUSTRATION.FORM.THEME</mat-label>
+          <mat-select formControlName="theme">
+            <mat-option *ngFor="let theme of themes$ | async" [value]="theme._id">
+              {{theme.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
+          <mat-label translate>ADMIN.ILLUSTRATION.FORM.CATEGORY</mat-label>
+          <mat-select formControlName="category">
+            <mat-option *ngFor="let category of categories$ | async" [value]="category._id">
+              {{category.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <ng-container *ngFor="let format of illustrationForm.get('formats')['controls']; let i = index" formArrayName="formats">
+        <div fxLayout="row wrap">
+          <ng-container [formGroupName]="i">
+            <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
+              <mat-label translate>ADMIN.ILLUSTRATION.FORM.PRICE</mat-label>
+              <input matInput formControlName="price">
+            </mat-form-field>
+            <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
+              <mat-label translate>ADMIN.ILLUSTRATION.FORM.FORMAT</mat-label>
+              <mat-select formControlName="format">
+                <mat-option *ngFor="let format of formats$ | async" [value]="format._id">
+                  {{format.label}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </ng-container>
+        </div>
+      </ng-container>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="addFormat()"
+      >{{'ADMIN.ILLUSTRATION.FORM.ADD_FORMAT' | translate}}</button>
+      <button
+        class="reset"
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="resetFormat()"
+      >{{'ADMIN.ILLUSTRATION.FORM.RESET_FORMAT' | translate}}</button>
+
+      <mat-form-field appearance="standard">
+        <mat-label translate>ADMIN.ILLUSTRATION.FORM.DETAILS</mat-label>
+        <textarea matInput formControlName="details"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
+        <mat-label translate>ADMIN.ILLUSTRATION.FORM.COLLECTION</mat-label>
+        <mat-select formControlName="collec">
+          <mat-option *ngFor="let collection of collections$ | async" [value]="collection._id">
+            {{collection.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <ng-container>
+        <div fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="25px">
+          <div fxLayout="column">
+            <h5 translate>ADMIN.ILLUSTRATION.FORM.SETTING_SCENE</h5>
+            <img
+              *ngIf="settingSceneUrl || illustration?.images.settingScene"
+              class="item-img"
+              [src]="settingSceneUrl ? settingSceneUrl : env.uploads + illustration.images.settingScene"
+              [alt]="illustration?.label"
+            >
+            <input type="file" id="settingScene" (change)="onSelectSettingScene($event)" #settingScene style="display: none">
+            <button mat-button (click)="selectSettingScene()" type="button">
+              {{'ADMIN.ILLUSTRATION.FORM.SELECT_IMAGE' | translate}}
+            </button>
+          </div>
+
+          <div fxLayout="column">
+            <h5 translate>ADMIN.ILLUSTRATION.FORM.PACKSHOT</h5>
+            <img
+              *ngIf="packShotUrl || illustration?.images.packShot"
+              class="item-img"
+              [src]="packShotUrl ? packShotUrl : env.uploads + illustration.images.packShot"
+              [alt]="illustration?.label"
+            >
+            <input type="file" id="packShot" (change)="onSelectPackShot($event)" #packShot style="display: none">
+            <button mat-button (click)="selectPackShot()" type="button">
+              {{'ADMIN.ILLUSTRATION.FORM.SELECT_IMAGE' | translate}}
+            </button>
+          </div>
+        </div>
+
+        <div fxLayout="column">
+          <h5 translate>ADMIN.ILLUSTRATION.FORM.DETAILS</h5>
+
+          <div fxLayout="row wrap" fxLayoutGap="25px">
+            <ng-container *ngFor="let detail of illustration?.images.details">
+              <div class="image-container">
+                <button
+                  mat-mini-fab
+                  color="warn"
+                  aria-label="delete image"
+                  (click)="onDeleteDetail(illustration, detail)"
+                ><mat-icon>close</mat-icon></button>
+                <img
+                  *ngIf="detail"
+                  class="item-img"
+                  [src]="env.uploads + detail"
+                  [alt]="illustration?.label"
+                >
+              </div>
+            </ng-container>
+            <ng-container *ngFor="let file of detailsUrls">
+              <div class="image-container">
+                <button
+                  mat-mini-fab
+                  color="warn"
+                  aria-label="delete image"
+                  (click)="onDeleteDetail(illustration, file)"
+                ><mat-icon>close</mat-icon></button>
+                <img
+                  *ngIf="file"
+                  class="item-img"
+                  [src]="file.url"
+                  [alt]="illustration?.label"
+                >
+              </div>
+            </ng-container>
+          </div>
+
+          <input type="file" id="details" multiple (change)="onSelectDetails($event)" #details style="display: none">
+          <button mat-button (click)="selectDetails()" type="button">
+            {{'ADMIN.ILLUSTRATION.FORM.SELECT_IMAGES' | translate}}
+          </button>
+        </div>
+      </ng-container>
+
+      <button class="create" mat-raised-button color="primary" type="submit">
+        {{illustration ? ('ADMIN.ILLUSTRATION.FORM.EDIT' | translate) : 'ADMIN.ILLUSTRATION.FORM.CREATE' | translate}}
+      </button>
+    </form>
+  </mat-card>
+
+</div>

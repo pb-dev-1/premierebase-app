@@ -1,0 +1,25 @@
+<pb-page-layout color="black">
+  <ng-container page>
+    <div class="collection">
+      <h1>{{(collection$ | async)?.label}}</h1>
+
+      <ngx-masonry class="mansory-list" [options]="masonryOptions">
+        <div
+          ngxMasonryItem
+          *ngFor="let image of (collection$ | async)?.images?.details"
+          [prepend]="false"
+          class="masonry-item"
+        >
+          <img [src]="env.uploads + image">
+        </div>
+      </ngx-masonry>
+
+      <h1 class="products" translate>COLLECTION.PRODUCTS</h1>
+
+      <pb-items-container [items]="(collection$ | async)?.products"></pb-items-container>
+    </div>
+
+    <pb-newsletter></pb-newsletter>
+    <pb-footer></pb-footer>
+  </ng-container>
+</pb-page-layout>

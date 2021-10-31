@@ -1,0 +1,12 @@
+<pb-page-admin-layout>
+  <ng-container page>
+
+    <h1 translate>ADMIN.THEME.EDIT.TITLE</h1>
+
+    <pb-format-form
+      [theme]="theme$ | async"
+      (submitForm)="updateTheme($event)"
+    ></pb-format-form>
+
+  </ng-container>
+</pb-page-admin-layout>

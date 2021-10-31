@@ -1,0 +1,125 @@
+@import 'src/colors';
+
+:host {
+  .illustration {
+    padding: 100px 50px 0;
+
+    .image-mini {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+
+      &.selected {
+        opacity: 0.3;
+      }
+    }
+
+    .image-container {
+      max-width: 350px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .info-container {
+      text-align: center;
+
+      h1 {
+        margin: 0 0 10px;
+      }
+
+      p {
+        font-family: Fixture-Expanded-Light, Roboto, sans-serif;
+        font-size: 13px;
+
+        &.price {
+          font-size: 24px;
+          font-family: Fixture-Expanded-SemiBold, Roboto, sans-serif;
+          margin-bottom: 30px;
+        }
+      }
+
+      mat-form-field {
+        margin: 15px 0;
+        width: 200px;
+      }
+
+      .quantity-container {
+        max-width: 200px;
+        margin: 0 auto 5px;
+  
+        .quantity-title {
+          font-size: 12px;
+          font-family: Fixture-Expanded-Light, Roboto, sans-serif;
+          text-align: left;
+        }
+  
+        .quantity-input {
+          padding-bottom: 5px;
+          border-bottom: solid 1px #000;
+  
+          mat-icon {
+            font-size: 16px;
+            height: 16px;
+            width: 16px;
+          }
+  
+          span {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    mat-tab-group {
+      max-width: 600px;
+      margin: 70px auto;
+
+      ::ng-deep {
+        .mat-tab-header {
+          border: none;
+          margin-bottom: 30px;
+        }
+
+        .mat-tab-label {
+          color: #000;
+          opacity: 1;
+          font-size: 16px;
+          font-family: Fixture-Expanded-Medium, Roboto, sans-serif;
+        }
+
+        mat-ink-bar {
+          background-color:#000;
+        }
+
+        .mat-tab-body {
+          text-align: center;
+        }
+      }
+    }
+
+    .mansory-list {
+      margin: 0 auto;
+
+      .masonry-item {
+        max-width: 350px;
+        margin-bottom: 50px;
+        transition: top 0.4s ease-in-out, left 0.4s ease-in-out;
+       
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .section {
+      text-align: center;
+      margin-top: 40px;
+
+      h2 {
+        margin: 0 0 30px;
+      }
+    }
+  }
+}

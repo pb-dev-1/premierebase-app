@@ -1,0 +1,14 @@
+@import 'src/colors';
+
+:host {
+
+  .layout {
+    background-color: $pb-creme;
+    min-height: 100vh;
+
+    .page-content {
+      padding: 60px 30px;
+    }
+  }
+
+}

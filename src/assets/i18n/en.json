@@ -1,0 +1,230 @@
+{
+  "ADMIN": {
+    "ILLUSTRATION": {
+      "EDIT": {
+        "TITLE": "Edit illustration"
+      },
+      "FORM": {
+        "ADD_FORMAT": "add new format",
+        "CATEGORY": "Category",
+        "COLLECTION": "Collection",
+        "CREATE": "Create",
+        "DETAILS": "Details",
+        "EDIT": "Edit",
+        "FORMAT": "Format",
+        "LABEL": "Label",
+        "PACKSHOT": "Packshot",
+        "PRICE": "Price",
+        "RESET_FORMAT": "Reset formats",
+        "STOCK": "Stock",
+        "SELECT_IMAGE": "Select image",
+        "SELECT_IMAGES": "Select images",
+        "SETTING_SCENE": "Setting scene",
+        "THEME": "Theme"
+      },
+      "LIST": {
+        "CATEGORY": "Category",
+        "CREATE": "Create illustration",
+        "COLLECTION": "Collection",
+        "DETAILS": "Details",
+        "LABEL": "Label",
+        "PACKSHOT": "Packshot",
+        "STOCK": "Stock",
+        "THEME": "Theme",
+        "TITLE": "Illustrations"
+      },
+      "NEW": {
+        "TITLE": "New illustration"
+      }
+    },
+    "CATEGORY": {
+      "EDIT": {
+        "TITLE": "Edit category"
+      },
+      "FORM": {
+        "CREATE": "Create",
+        "EDIT": "Edit",
+        "CATEGORY": "Category"
+      },
+      "LIST": {
+        "CATEGORY": "Category",
+        "TITLE": "Categories"
+      },
+      "NEW": {
+        "TITLE": "New category"
+      }
+    },
+    "COLLECTION": {
+      "EDIT": {
+        "TITLE": "Edit collection"
+      },
+      "FORM": {
+        "CREATE": "Create",
+        "COLLABORATION": "Collaboration",
+        "COLLABORATION_DESCRIPTION": "Collaboration description",
+        "COLLECTION": "Collection image",
+        "DESCRIPTION": "Description",
+        "DETAILS": "Details images",
+        "EDIT": "Modifier",
+        "HOME": "Home image",
+        "LABEL": "Label",
+        "SELECT_IMAGE": "Select image",
+        "SELECT_IMAGES": "Select images",
+        "THEME": "Theme"
+      },
+      "LIST": {
+        "CREATE": "Create illustration",
+        "DESCRIPTION": "Description",
+        "LABEL": "Label",
+        "COLLECTION": "Collection image",
+        "THEME": "Theme",
+        "TITLE": "Collections"
+      },
+      "NEW": {
+        "TITLE": "New collection"
+      }
+    },
+    "FORMAT": {
+      "EDIT": {
+        "TITLE": "Edit format"
+      },
+      "FORM": {
+        "CREATE": "Create",
+        "EDIT": "Edit",
+        "FORMAT": "Format"
+      },
+      "LIST": {
+        "FORMAT": "Format",
+        "TITLE": "Formats"
+      },
+      "NEW": {
+        "TITLE": "New format"
+      }
+    },
+    "THEME": {
+      "EDIT": {
+        "TITLE": "Edit theme"
+      },
+      "FORM": {
+        "CREATE": "Create",
+        "EDIT": "Edit",
+        "THEME": "Theme"
+      },
+      "LIST": {
+        "THEME": "Theme",
+        "TITLE": "Themes"
+      },
+      "NEW": {
+        "TITLE": "New theme"
+      }
+    }
+  },
+  "ACCOUNT": {
+    "TITLE": "My account"
+  },
+  "BASKET": {
+    "TITLE": "Shopping cart",
+    "PRODUCT": "Product",
+    "LABEL": "Label",
+    "PRICE": "Price",
+    "QUANTITY": "Quantity",
+    "TOTAL": "Total"
+  },
+  "BRAND": {
+    "AMBITION": "Première Base aims to convey its vision of the timeless impact of music, sport, fashion and design through a refined and colourful aesthetic that reflects its inspirations. The illustrations are imagined, designed and printed in Paris.",
+    "BANNER": "PREMIÈRE BASE",
+    "HISTORY": "Founded in 2019 by a long-standing friendship, the spirit of the brand was born from a shared passion for graphic art, the retro (or vintage?) universe in all its forms and urban art movements.",
+    "INSPIRATION": "Première Base is inspired by street culture and vintage design.",
+    "TITLE": "The brand"
+  },
+  "COLLECTIONS": {
+    "TITLE": "Collections",
+    "COLLECTION_LINK": "Discover collection"
+  },
+  "COLLECTION": {
+    "PRODUCTS": "Collection's products"
+  },
+  "CONTACT": {},
+  "CUSTOM": {},
+  "HOME": {
+    "COLLECTIONS_TITLE": "Our collections",
+    "COLLECTIONS_LINK": "Discover our collections",
+    "ILLUSTRATION_TITLE": "Our illustrations",
+    "NEWEST_TITLE": "Our news",
+    "STUDIO_TITLE": "The Studio",
+    "STUDIO": {
+      "SECTION_1": "Customised illustration",
+      "DESCRIPTION_1": "Turn your photos into illustrations for a personalised and original gift",
+      "SECTION_2": "Artistic Collaboration",
+      "DESCRIPTION_2": "A design project, branding, typography, new products... We set up together an artistic line consistent with your brand universe.",
+      "SECTION_3": "Space dressing",
+      "DESCRIPTION_3": "Visual merchandising, scenography, in-store events, large-format printing, we dress up your spaces and make your points of sale more dynamic"
+    },
+    "COLLECTION_TITLE": "Blue Garage x Premiere Base",
+    "COLLECTION_LINK": "Discover collaboration"
+  },
+  "ILLUSTRATIONS": {
+    "TITLE": "Illustrations"
+  },
+  "ILLUSTRATION": {
+    "DELIVERY": "Delivery and return",
+    "DETAILS": "Details",
+    "FORMAT": "Format",
+    "FORMATS": "Formats",
+    "ORDER": "Add to cart",
+    "QUANTITY": "Quantity",
+    "SIMILAR_PRODUCTS": "Similar products",
+    "STOCK": "{{stock}} in storage"
+  },
+  "JOURNAL": {
+    "TITLE": "Journal"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "SUBMIT": "Sign in"
+  },
+  "NAV": {
+    "LEFT": {
+      "COLLECTIONS": "Collections",
+      "SHOP": "Shop",
+      "BRAND": "The brand",
+      "STUDIO": "Journal",
+      "JOURNAL": "Journal",
+      "CONTACT": "Contact"
+    },
+    "TOP": {
+      "ACCOUNT": "My account",
+      "SIGNUP": "Sign up",
+      "LOGIN": "Sign in",
+      "LOGOUT": "Logout",
+      "BASKET": "Basket"
+    }
+  },
+  "NEWSLETTER": {
+    "STAY_CONNECTED": "Stay connected"
+  },
+  "SHOP": {},
+  "SIGNUP": {
+    "TITLE": "Signup",
+    "FIRST_NAME": "First name",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "SUBMIT": "Sign up"
+  },
+  "SHARED": {
+    "FORM_ERROR": {
+      "REQUIRED": "Field is required",
+      "MIN_LENGTH": "Field length is min {{value}}",
+      "EMAIL": "Not a valid email"
+    },
+    "GENERIC_BUTTON": {
+      "DISCOVER_STUDIO": "Discover studio",
+      "MORE_PRODUCT": "Show more product",
+      "SEND": "Send",
+      "SPOTIFY": "The best Spotify playlists"
+    }
+  }
+}

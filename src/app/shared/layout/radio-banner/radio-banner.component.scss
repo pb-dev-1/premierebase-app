@@ -1,0 +1,13 @@
+:host {
+  .radio-banner {
+    background: url('../../../../assets/images/backgrounds/radio/notorious.png') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    padding: 90px 0;
+
+    img {
+      width: 160px;
+      margin-bottom: 35px;
+    }
+  }
+}

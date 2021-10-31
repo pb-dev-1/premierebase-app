@@ -1,0 +1,23 @@
+<div fxLayout="column">
+  <mat-card class="form-container">
+    <form
+      [formGroup]="categoryForm"
+      (ngSubmit)="onSubmit(categoryForm.value)"
+      fxLayout="column"
+    >
+      <div fxLayout="row wrap">
+        <mat-form-field appearance="standard" fxFlex="1 1 100%">
+          <mat-label translate>ADMIN.CATEGORY.FORM.CATEGORY</mat-label>
+          <input matInput formControlName="label">
+        </mat-form-field>
+      </div>
+
+      <button class="create" mat-raised-button color="primary" type="submit">
+        {{category ? ('ADMIN.CATEGORY.FORM.EDIT' | translate) : 'ADMIN.CATEGORY.FORM.CREATE' | translate}}
+      </button>
+    </form>
+  </mat-card>
+</div>
+
+
+

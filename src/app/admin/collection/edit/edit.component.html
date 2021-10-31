@@ -1,0 +1,12 @@
+<pb-page-admin-layout>
+  <ng-container page>
+
+    <h1 translate>ADMIN.COLLECTION.EDIT.TITLE</h1>
+
+    <pb-collection-form
+      [collection]="collection$ | async"
+      (submitForm)="updateCollection($event)"
+    ></pb-collection-form>
+
+  </ng-container>
+</pb-page-admin-layout>

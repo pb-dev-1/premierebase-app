@@ -1,0 +1,44 @@
+@import 'src/colors';
+
+:host {
+
+  .highlighted-item {
+    background: url('../../../../assets/images/backgrounds/home/tyler-bg.png') no-repeat center center;
+    background-size: cover;
+    padding: 100px 0;
+
+    .highlighted-item-img {
+      max-width: 280px;
+    }
+
+    .highlighted-item-info {
+      background-color: $pb-orange;
+      max-width: 475px;
+      padding: 79px 49px 56px 50px;
+      color: $pb-white;
+
+      .info-title {
+        font-size: 30px;
+        font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
+        margin: 0 0 6px;
+      }
+
+      .info-subtitle {
+        font-size: 16px;
+        font-family: Fixture-Expanded-Light, "Helvetica Neue", sans-serif;
+        margin: 0 0 20px;
+      }
+
+      .info-description {
+        font-size: 12px;
+        font-family: Fixture-Expanded-ExtraLight, "Helvetica Neue", sans-serif;
+        line-height: 1.5;
+      }
+
+      .info {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+}

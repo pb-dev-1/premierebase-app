@@ -1,0 +1,12 @@
+import {Component} from '@angular/core'
+
+@Component({
+  selector: 'pb-newsletter',
+  templateUrl: './newsletter.component.html',
+  styleUrls: ['./newsletter.component.scss']
+})
+export class NewsletterComponent {
+
+  constructor() { }
+
+}

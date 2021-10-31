@@ -1,0 +1,12 @@
+<pb-page-admin-layout>
+  <ng-container page>
+
+    <h1 translate>ADMIN.ILLUSTRATION.EDIT.TITLE</h1>
+
+    <pb-illustration-form
+      [illustration]="illustration$ | async"
+      (submitForm)="updateIllustration($event)"
+    ></pb-illustration-form>
+
+  </ng-container>
+</pb-page-admin-layout>
