@@ -22,7 +22,8 @@ export class EditComponent {
   ) { }
 
   updateFormat(params: any) {
-    this.formatService.update(params).subscribe(async (d) => {
+    this.formatService.update(params).subscribe(async (f) => {
+      this.formatService.updateOrCreateObjectInList(f)
       await this.router.navigate(['admin', 'formats'])
     })
   }

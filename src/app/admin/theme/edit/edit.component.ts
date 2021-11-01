@@ -23,6 +23,7 @@ export class EditComponent {
 
   updateTheme(params: any) {
     this.themeService.update(params).subscribe(async (t) => {
+      this.themeService.updateOrCreateObjectInList(t)
       await this.router.navigate(['admin', 'themes'])
     })
   }

@@ -23,6 +23,7 @@ export class EditComponent {
 
   updateCategory(params) {
     this.categoryService.update(params).subscribe(async (c) => {
+      this.categoryService.updateOrCreateObjectInList(c)
       await this.router.navigate(['admin', 'categories'])
     })
   }

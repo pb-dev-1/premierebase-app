@@ -17,6 +17,7 @@ export class NewComponent {
 
   createTheme(params) {
     this.themeService.create(params).subscribe(async (t) => {
+      this.themeService.updateOrCreateObjectInList(t)
       await this.router.navigate(['admin', 'themes'])
     })
   }

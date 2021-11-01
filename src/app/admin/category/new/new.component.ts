@@ -17,6 +17,7 @@ export class NewComponent {
 
   createCategory(params) {
     this.categoryService.create(params).subscribe(async (c) => {
+      this.categoryService.updateOrCreateObjectInList(c)
       await this.router.navigate(['admin', 'categories'])
     })
   }

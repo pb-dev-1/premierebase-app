@@ -22,7 +22,8 @@ export class EditComponent {
   ) { }
 
   updateIllustration(params: any) {
-    this.illustrationService.update(params).subscribe(async (d) => {
+    this.illustrationService.update(params).subscribe(async (i) => {
+      this.illustrationService.updateOrCreateObjectInList(i)
       await this.router.navigate(['admin', 'illustrations'])
     })
   }

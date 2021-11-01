@@ -16,7 +16,8 @@ export class NewComponent {
   ) { }
 
   createCollection(params) {
-    this.collectionService.create(params).subscribe(async (d) => {
+    this.collectionService.create(params).subscribe(async (c) => {
+      this.collectionService.updateOrCreateObjectInList(c)
       await this.router.navigate(['admin', 'collections'])
     })
   }

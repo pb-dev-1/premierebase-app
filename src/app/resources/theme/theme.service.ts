@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
-import {BehaviorSubject, Observable} from 'rxjs'
-import {first} from 'rxjs/operators'
+import {Observable, BehaviorSubject} from 'rxjs'
 
 import {environment} from '@env/environment'
 import {Theme} from '@resources/theme/theme.model'
@@ -18,7 +17,6 @@ export class ThemeService {
 
   getThemes() {
     return this.http.get(environment.api + '/themes')
-      .pipe(first())
       .subscribe((themes: Theme[]) => this.themes$.next(themes))
   }
 
@@ -26,15 +24,27 @@ export class ThemeService {
     return this.http.get(`${environment.api}/themes/${id}`) as Observable<Theme>
   }
 
-  create(params): Observable<Theme> {
+  create(params: any): Observable<Theme> {
     return this.http.post(`${environment.api}/themes/create`, params) as Observable<Theme>
   }
 
-  update(params): Observable<Theme> {
+  update(params: any): Observable<Theme> {
     return this.http.post(`${environment.api}/themes/${params.id}/update`, params) as Observable<Theme>
   }
 
-  delete(id) {
+  delete(id: string) {
     return this.http.delete(`${environment.api}/themes/${id}/delete`)
+  }
+
+  updateOrCreateObjectInList(theme: Theme) {
+    const currentThemes = this.themes$.getValue()
+    const themeIndex = currentThemes.findIndex(t => theme._id === t._id)
+    currentThemes && themeIndex !== -1 ? currentThemes[themeIndex] = theme : currentThemes.push(theme)
+    this.themes$.next(currentThemes)
+  }
+
+  deleteObjectInList(id: string) {
+    const currentThemes = this.themes$.getValue()?.filter(t => t._id !== id)
+    this.themes$.next(currentThemes)
   }
 }

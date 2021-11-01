@@ -1,6 +1,6 @@
 import {Component} from '@angular/core'
 import {Observable} from 'rxjs'
-import {map, tap} from 'rxjs/operators'
+import {tap} from 'rxjs/operators'
 
 import {Theme} from '@resources/theme/theme.model'
 import {ThemeService} from '@resources/theme/theme.service'
@@ -12,15 +12,15 @@ import {ThemeService} from '@resources/theme/theme.service'
 })
 export class ListComponent {
   themes$: Observable<Theme[]> = this.themeService.themes$.pipe(
-    tap(() => this.themeService.getThemes())
+    tap(themes => {if (!themes) {this.themeService.getThemes()}})
   )
   displayedColumns: string[] = ['theme', 'actions']
 
   constructor(private themeService: ThemeService) {}
 
-  deleteTheme(id) {
-    this.themeService.delete(id).subscribe(_ => {
-      this.themes$ = this.themes$.pipe(map(themes => themes.filter(theme => theme._id !== id)))
+  deleteTheme(id: string) {
+    this.themeService.delete(id).subscribe(() => {
+      this.themeService.deleteObjectInList(id)
     })
   }
 

@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
-import {BehaviorSubject, Observable} from 'rxjs'
+import {Observable, BehaviorSubject} from 'rxjs'
 
 import {environment} from '@env/environment'
 import {Illustration} from '@resources/illustration/illustration.model'
-import {Collection} from '@resources/collection/collection.model'
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +36,7 @@ export class IllustrationService {
     return this.http.get(`${environment.api}/illustrations/${id}/similar`) as Observable<Illustration[]>
   }
 
-  create(params): Observable<Illustration> {
+  create(params: any): Observable<Illustration> {
     const data: FormData = new FormData()
     const files = [params.settingSceneFile, params.packShotFile, ...params.detailsFile].filter(file => !!file)
     if (files.length) {
@@ -48,7 +47,7 @@ export class IllustrationService {
     return this.http.post(`${environment.api}/illustrations/create`, data) as Observable<Illustration>
   }
 
-  update(params): Observable<Illustration> {
+  update(params: any): Observable<Illustration> {
     const data: FormData = new FormData()
     const files = [params.settingSceneFile, params.packShotFile, ...params.detailsFile].filter(file => !!file)
     if (files.length) {
@@ -59,11 +58,23 @@ export class IllustrationService {
     return this.http.post(`${environment.api}/illustrations/${params.id}/update`, data) as Observable<Illustration>
   }
 
-  delete(id) {
+  delete(id: string) {
     return this.http.delete(`${environment.api}/illustrations/${id}/delete`)
   }
 
-  deleteDetail(illustrationId, id) {
+  deleteDetail(illustrationId: string, id: string) {
     return this.http.post(`${environment.api}/illustrations/${illustrationId}/detail/${id}/delete`, {})
+  }
+
+  updateOrCreateObjectInList(illustration: Illustration) {
+    const currentIllustrations = this.illustrations$.getValue()
+    const illustrationIndex = currentIllustrations.findIndex(i => illustration._id === i._id)
+    currentIllustrations && illustrationIndex !== -1 ? currentIllustrations[illustrationIndex] = illustration : currentIllustrations.push(illustration)
+    this.illustrations$.next(currentIllustrations)
+  }
+
+  deleteObjectInList(id: string) {
+    const currentIllustrations = this.illustrations$.getValue()?.filter(i => i._id !== id)
+    this.illustrations$.next(currentIllustrations)
   }
 }

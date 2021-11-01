@@ -63,7 +63,7 @@ export class FormComponent implements OnChanges {
     this.buildForm()
   }
 
-  public ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) {
     if (changes?.illustration) {
      this.buildForm()
     }

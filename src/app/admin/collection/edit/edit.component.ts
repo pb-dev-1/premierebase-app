@@ -22,7 +22,8 @@ export class EditComponent {
   ) { }
 
   updateCollection(params: any) {
-    this.collectionService.update(params).subscribe(async (d) => {
+    this.collectionService.update(params).subscribe(async (c) => {
+      this.collectionService.updateOrCreateObjectInList(c)
       await this.router.navigate(['admin', 'collections'])
     })
   }

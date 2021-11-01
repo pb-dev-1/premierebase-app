@@ -18,7 +18,8 @@ export class NewComponent implements OnInit {
   ngOnInit(): void { }
 
   createIllustration(params) {
-    this.illustrationService.create(params).subscribe(async (d) => {
+    this.illustrationService.create(params).subscribe(async (i) => {
+      this.illustrationService.updateOrCreateObjectInList(i)
       await this.router.navigate(['admin', 'illustrations'])
     })
   }

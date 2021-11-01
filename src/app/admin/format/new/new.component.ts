@@ -16,7 +16,8 @@ export class NewComponent {
   ) { }
 
   createFormat(params) {
-    this.formatService.create(params).subscribe(async (d) => {
+    this.formatService.create(params).subscribe(async (f) => {
+      this.formatService.updateOrCreateObjectInList(f)
       await this.router.navigate(['admin', 'formats'])
     })
   }

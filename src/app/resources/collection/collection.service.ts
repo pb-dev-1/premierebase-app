@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
-import {BehaviorSubject, Observable} from 'rxjs'
-import {first} from 'rxjs/operators'
+import {Observable, BehaviorSubject} from 'rxjs'
 
 import {environment} from '@env/environment'
 import {Collection} from '@resources/collection/collection.model'
@@ -18,10 +17,7 @@ export class CollectionService {
 
   getCollections() {
     return this.http.get(environment.api + '/collections')
-      .pipe(first())
-      .subscribe((collections: Collection[]) => {
-        this.collections$.next(collections)
-      })
+      .subscribe((collections: Collection[]) => this.collections$.next(collections))
   }
 
   getCollection(id: string): Observable<Collection> {
@@ -56,5 +52,17 @@ export class CollectionService {
 
   deleteDetail(collectionId: string, detail: string) {
     return this.http.post(`${environment.api}/collections/${collectionId}/detail/delete`, {detail})
+  }
+
+  updateOrCreateObjectInList(collection: Collection) {
+    const currentCollections = this.collections$.getValue()
+    const collectionIndex = currentCollections.findIndex(c => collection._id === c._id)
+    currentCollections && collectionIndex !== -1 ? currentCollections[collectionIndex] = collection : currentCollections.push(collection)
+    this.collections$.next(currentCollections)
+  }
+
+  deleteObjectInList(id: string) {
+    const currentCollections = this.collections$.getValue()?.filter(c => c._id !== id)
+    this.collections$.next(currentCollections)
   }
 }
