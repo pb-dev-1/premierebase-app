@@ -12,11 +12,7 @@ import {FormatService} from '@resources/format/format.service'
 })
 export class ListComponent {
   formats$: Observable<Format[]> = this.formatService.formats$.pipe(
-    tap(illustrations => {
-      if (!illustrations) {
-        this.formatService.getFormats()
-      }
-    })
+    tap(() => this.formatService.getFormats())
   )
   displayedColumns: string[] = ['format', 'actions']
 

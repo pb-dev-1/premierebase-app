@@ -12,11 +12,7 @@ import {CategoryService} from '@resources/category/category.service'
 })
 export class ListComponent {
   categories$: Observable<Category[]> = this.categoryService.categories$.pipe(
-    tap(categories => {
-      if (!categories) {
-        this.categoryService.getCategories()
-      }
-    })
+    tap(() => this.categoryService.getCategories())
   )
   displayedColumns: string[] = ['category', 'actions']
 

@@ -14,11 +14,7 @@ import {environment} from '@env/environment'
 export class ListComponent {
   env = environment
   illustrations$: Observable<Illustration[]> = this.illustrationService.illustrations$.pipe(
-    tap(illustrations => {
-      if (!illustrations) {
-        this.illustrationService.getIllustrations()
-      }
-    })
+    tap(() => this.illustrationService.getIllustrations())
   )
   displayedColumns: string[] = ['packshot', 'label', 'collection', 'stock', 'theme', 'category', 'details', 'actions']
 

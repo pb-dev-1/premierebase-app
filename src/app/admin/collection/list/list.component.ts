@@ -15,11 +15,7 @@ export class ListComponent {
   env = environment
   
   collections$: Observable<Collection[]> = this.collectionService.collections$.pipe(
-    tap(collections => {
-      if (!collections) {
-        this.collectionService.getCollections()
-      }
-    })
+    tap(() => this.collectionService.getCollections())
   )
   displayedColumns: string[] = ['collection', 'label', 'theme', 'description', 'actions']
 

@@ -12,11 +12,7 @@ import {ThemeService} from '@resources/theme/theme.service'
 })
 export class ListComponent {
   themes$: Observable<Theme[]> = this.themeService.themes$.pipe(
-    tap(illustrations => {
-      if (!illustrations) {
-        this.themeService.getThemes()
-      }
-    })
+    tap(() => this.themeService.getThemes())
   )
   displayedColumns: string[] = ['theme', 'actions']
 
