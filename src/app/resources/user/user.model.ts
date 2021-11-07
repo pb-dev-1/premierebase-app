@@ -9,7 +9,7 @@ export interface User {
 }
 
 export interface UserState {
-  token: '',
-  expiresIn: 0,
+  token: string,
+  expiresIn: number,
   infos: Partial<User>
 }

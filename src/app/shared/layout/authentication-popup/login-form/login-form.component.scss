@@ -1,0 +1,16 @@
+:host {
+  form {
+    margin: 20px 40px 40px;
+  }
+
+  pb-generic-button {
+    width: 100%;
+    margin-top: 15px;
+
+    ::ng-deep {
+      .generic-btn {
+        width: 100%;
+      }
+    }
+  }
+}

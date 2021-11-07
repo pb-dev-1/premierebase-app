@@ -212,7 +212,9 @@
     "NAME": "Name",
     "EMAIL": "Email",
     "PASSWORD": "Password",
-    "SUBMIT": "Sign up"
+    "SUBMIT": "Sign up",
+    "CONSENT": "I agree to the terms and conditions and privacy policy",
+    "EMAILING": "Sign me up for the mailing"
   },
   "SHARED": {
     "FORM_ERROR": {

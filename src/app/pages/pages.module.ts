@@ -13,8 +13,6 @@ import {ContactComponent} from './contact/contact.component'
 import {BrandComponent} from './brand/brand.component'
 import {AccountComponent} from './account/account.component'
 import {BasketComponent} from './basket/basket.component'
-import {LoginComponent} from './login/login.component'
-import {SignupComponent} from './signup/signup.component'
 import {HomeComponent} from './home/home.component'
 import {IllustrationsComponent} from './illustrations/illustrations.component'
 import {IllustrationComponent} from './illustration/illustration.component'
@@ -28,8 +26,6 @@ import {CollectionComponent} from './collection/collection.component'
     BrandComponent,
     AccountComponent,
     BasketComponent,
-    LoginComponent,
-    SignupComponent,
     HomeComponent,
     IllustrationsComponent,
     CollectionsComponent,

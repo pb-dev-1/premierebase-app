@@ -7,6 +7,7 @@ import {FlexLayoutModule} from '@angular/flex-layout'
 import {RouterModule} from '@angular/router'
 import {NgxMasonryModule} from 'ngx-masonry'
 import {NgxFlagPickerModule} from 'ngx-flag-picker'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import {HttpErrorComponent} from '@resources/http-error/http-error.component'
 import {MaterialModule} from '@resources/material.module'
@@ -25,6 +26,10 @@ import {FooterComponent} from './layout/footer/footer.component'
 import {PageAdminLayoutComponent} from './layout/page-admin-layout/page-admin-layout.component'
 import {HeaderAdminComponent} from './layout/header-admin/header-admin.component'
 import {TumblrGridComponent} from './ui-components/tumblr-grid/tumblr-grid.component'
+import {AuthenticationPopupComponent} from './layout/authentication-popup/authentication-popup.component'
+import {LoginFormComponent} from './layout/authentication-popup/login-form/login-form.component'
+import {SignupFormComponent} from './layout/authentication-popup/signup-form/signup-form.component'
+import {ClickOutsideDirective} from './directive/click-outside.directive'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http)
@@ -48,6 +53,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     PageAdminLayoutComponent,
     HeaderAdminComponent,
     TumblrGridComponent,
+    AuthenticationPopupComponent,
+    LoginFormComponent,
+    SignupFormComponent,
+    ClickOutsideDirective,
   ],
   imports: [
     CommonModule,
@@ -64,6 +73,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     RouterModule,
     NgxMasonryModule,
     NgxFlagPickerModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     FormErrorComponent,
@@ -80,6 +91,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     PageAdminLayoutComponent,
     HeaderAdminComponent,
     TumblrGridComponent,
+    SignupFormComponent,
+    LoginFormComponent,
+    ClickOutsideDirective,
   ]
 })
 export class SharedModule { }

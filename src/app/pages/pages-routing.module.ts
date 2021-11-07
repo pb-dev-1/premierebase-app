@@ -10,8 +10,6 @@ import {IllustrationsComponent} from '@app/pages/illustrations/illustrations.com
 import {IllustrationComponent} from '@app/pages/illustration/illustration.component'
 import {BasketComponent} from '@app/pages/basket/basket.component'
 import {AccountComponent} from '@app/pages/account/account.component'
-import {LoginComponent} from '@app/pages/login/login.component'
-import {SignupComponent} from '@app/pages/signup/signup.component'
 import {AuthGuard } from '@app/resources/auth/auth.guard'
 
 const routes: Routes = [
@@ -23,8 +21,6 @@ const routes: Routes = [
   {path: 'journal', component: JournalComponent},
   {path: 'brand', component: BrandComponent},
   {path: 'basket', component: BasketComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: 'login', component: LoginComponent},
   {path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
   /*{path: 'contact', component: ContactComponent},*/
 ]
@@ -33,5 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PagesRoutingModule {
-}
+export class PagesRoutingModule {}

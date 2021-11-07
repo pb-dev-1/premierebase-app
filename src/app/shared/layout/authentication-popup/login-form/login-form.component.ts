@@ -2,15 +2,15 @@ import {Component, OnDestroy} from '@angular/core'
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
 import {Router} from '@angular/router'
 
-import {AuthService} from '@resources/auth/auth.service'
-import {Credentials} from '@resources/auth/auth.model'
+import {Credentials} from '@app/resources/auth/auth.model'
+import {AuthService} from '@app/resources/auth/auth.service'
 
 @Component({
-  selector: 'pb-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'pb-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.scss']
 })
-export class LoginComponent implements OnDestroy {
+export class LoginFormComponent implements OnDestroy {
   loginForm: FormGroup
   submitted = false
 
@@ -28,8 +28,7 @@ export class LoginComponent implements OnDestroy {
   onSubmit(credentials: Credentials) {
     this.submitted = true
     if (this.loginForm.valid) {
-      this.auth.login(credentials)
-        .subscribe(() => this.router.navigate(['/']))
+      this.auth.login(credentials).subscribe(() => this.router.navigate(['/']))
     }
   }
 
@@ -37,5 +36,4 @@ export class LoginComponent implements OnDestroy {
     this.submitted = false
     this.loginForm.reset()
   }
-
 }

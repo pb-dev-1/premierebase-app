@@ -29,17 +29,17 @@ export class AuthService {
   }
 
   signup(user: Partial<User>) {
-    return this.http.post<any>(environment.api + '/users/signup', user)
-    /*.pipe(
-      catchError(e => console.log(e))
-    )*/
+    return this.http.post<any>(environment.api + '/users/signup', user).pipe(
+      tap(token => this.setSession({token, infos: {...user}, expiresIn: 3600})),
+      map(() => user),
+      catchError(this.handleError)
+    )
   }
 
   login(credentials: Credentials) {
     return this.http.post<any>(environment.api + '/users/login', credentials).pipe(
       tap((userState: UserState) => this.setSession(userState)),
       map(user => user.infos),
-      shareReplay(),
       catchError(this.handleError)
     )
   }
@@ -78,7 +78,6 @@ export class AuthService {
   }
 
   handleError(error: HttpErrorResponse) {
-    console.log(error)
     return throwError(error)
   }
 

@@ -14,6 +14,7 @@ import {BasketService} from '@app/resources/basket/basket.service'
 export class HeaderComponent implements OnInit {
   @Input() color = 'white'
 
+  showAuthenticationPop = false
   route = ''
   currentLang = 'fr'
   countryCodes = ['fr', 'gb']
@@ -46,7 +47,11 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([`/${route}`])
   }
 
-  changeLang(lang) {
+  toggleAuthenticationPopup(shouldShow) {
+    this.showAuthenticationPop = shouldShow
+  }
+
+  changeLang(lang: string) {
     if (lang === 'gb') {
       lang = 'en'
     }

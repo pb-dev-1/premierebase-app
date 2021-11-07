@@ -1,0 +1,22 @@
+<form
+  fxLayout="column"
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit(loginForm.value)"
+>
+  <mat-form-field>
+    <mat-label>{{'LOGIN.EMAIL' | translate}}</mat-label>
+    <input formControlName="email" type="email" matInput>
+  </mat-form-field>
+  <pb-form-error [submitted]="submitted" [field]="this.loginForm.controls.email"></pb-form-error>
+
+  <mat-form-field>
+    <mat-label>{{'LOGIN.PASSWORD' | translate}}</mat-label>
+    <input formControlName="password" type="password" matInput>
+  </mat-form-field>
+  <pb-form-error [submitted]="submitted" [field]="this.loginForm.controls.password"></pb-form-error>
+
+  <pb-generic-button
+    [label]="'LOGIN.SUBMIT' | translate"
+    type="submit"
+  ></pb-generic-button>
+</form>

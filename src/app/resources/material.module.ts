@@ -10,6 +10,7 @@ import {MatTableModule} from '@angular/material/table'
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatCardModule} from '@angular/material/card'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
+import {MatCheckboxModule} from '@angular/material/checkbox'
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
     MatFormFieldModule,
     MatSlideToggleModule,
     MatCardModule,
+    MatCheckboxModule,
   ],
   exports: [
     MatIconModule,
@@ -38,6 +40,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
     MatFormFieldModule,
     MatSlideToggleModule,
     MatCardModule,
+    MatCheckboxModule,
   ],
 })
 export class MaterialModule {}

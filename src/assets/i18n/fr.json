@@ -216,7 +216,9 @@
     "NAME": "Nom",
     "EMAIL": "Email",
     "PASSWORD": "Mot de passe",
-    "SUBMIT": "M'inscrire"
+    "SUBMIT": "M'inscrire",
+    "CONSENT": "J'accepte les conditions générales et la politique de confidentialité.",
+    "EMAILING": "Inscrivez-moi pour le mailing"
   },
   "SHARED": {
     "FORM_ERROR": {

@@ -1,4 +1,4 @@
-<div class="nav-bar">
+<div class="nav-bar" clickOutside (onClickOutside)="toggleAuthenticationPopup(false)">
   <a routerLink="/">
     <img *ngIf="color === 'white'" class="logo" src="assets/images/logos/logo-1.svg">
     <img *ngIf="color === 'black'" class="logo" src="assets/images/logos/logo-2.png">
@@ -26,19 +26,13 @@
       (click)="navigate('account')"
     >{{'NAV.TOP.ACCOUNT' | translate}}</div>
 
-    <div
+    <div 
       class="nav-bar-link {{color}}"
-      *ngIf="authService.isLoggedOut()"
-      [ngClass]="{'active': route === 'signup'}"
-      (click)="navigate('signup')"
-    >{{'NAV.TOP.SIGNUP' | translate}}</div>
+      *ngIf="!authService.isLoggedIn()"
+      [ngClass]="{'active': showAuthenticationPop}"
+      (click)="toggleAuthenticationPopup(!showAuthenticationPop)"
+    >{{'NAV.TOP.ACCOUNT' | translate}}</div>
 
-    <div
-      class="nav-bar-link {{color}}"
-      *ngIf="authService.isLoggedOut()"
-      [ngClass]="{'active': route === 'login'}"
-      (click)="navigate('login')"
-    >{{'NAV.TOP.LOGIN' | translate}}</div>
 
     <div
       class="nav-bar-link {{color}}"
@@ -73,6 +67,7 @@
     </mat-menu>
   </div>
 
+  <pb-authentication-popup *ngIf="showAuthenticationPop && !authService.isLoggedIn()"></pb-authentication-popup>
 </div>
 
 <div class="side-nav" fxHide.xs fxHide.sm>

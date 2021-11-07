@@ -1,0 +1,44 @@
+:host {
+  form {
+    margin: 20px 40px 40px;
+  }
+
+  pb-generic-button {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    ::ng-deep {
+      .generic-btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .has-error {
+    ::ng-deep {
+      .mat-checkbox-frame {
+        border-color: red; 
+      }
+    }
+  }
+
+  ::ng-deep {
+    mat-checkbox {
+      font-size: 10px;
+      margin-top: 5px;
+
+      label.mat-checkbox-layout {
+        white-space: normal;
+
+        .mat-checkbox-label {
+          line-height: 16px !important;
+        }
+      }
+    }
+
+    .mat-checkbox-checked .mat-checkbox-background {
+      background-color: #000;
+    }
+  }
+}
