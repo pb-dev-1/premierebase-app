@@ -123,12 +123,21 @@
     "TITLE": "My account"
   },
   "BASKET": {
-    "TITLE": "Shopping cart",
-    "PRODUCT": "Product",
-    "LABEL": "Label",
-    "PRICE": "Price",
-    "QUANTITY": "Quantity",
-    "TOTAL": "Total"
+    "DELIVERY": "Shipping",
+    "DELIVERY_POSSIBILITIES": "Shipping in 48h<br>Free delivery<br>from 200€ of purchase",
+    "EMPTY_LIST": "You don't have an item in your basket!",
+    "ENTER_PROMO_CODE": "Enter your promo code",
+    "GIFTED": "Gifted",
+    "GOT_PROMO_CODE": "Do you have a promo code?",
+    "NEED_HELP": "A question, need help? contactpremierebase@gmail.com<br>07 82 11 22 93",
+    "PAIEMENT_POSSIBILITIES": "By credit card<br>(Visa, MasterCard, CB),<br>PayPal, Apple Pay...",
+    "QUICK_DELIVERY": "Quick delivery",
+    "REMOVE": "Remove",
+    "FREE_RETURN": "Free shipping",
+    "SECURED_PAIEMENT": "Secure payment",
+    "TOTAL_WD": "Subtotal",
+    "TOTAL": "Total",
+    "TITLE": "Basket"
   },
   "BRAND": {
     "AMBITION": "Première Base aims to convey its vision of the timeless impact of music, sport, fashion and design through a refined and colourful aesthetic that reflects its inspirations. The illustrations are imagined, designed and printed in Paris.",
@@ -226,7 +235,8 @@
       "DISCOVER_STUDIO": "Discover studio",
       "MORE_PRODUCT": "Show more product",
       "SEND": "Send",
-      "SPOTIFY": "The best Spotify playlists"
+      "SPOTIFY": "The best Spotify playlists",
+      "VALIDATE": "Validate"
     }
   }
 }

@@ -12,8 +12,8 @@ export class FormComponent implements OnChanges {
   categoryForm: FormGroup
   submitted = false
 
-  @Input() public category: Category
-  @Output() public submitForm: EventEmitter<any> = new EventEmitter()
+  @Input() category: Category
+  @Output() submitForm: EventEmitter<any> = new EventEmitter()
 
   constructor(
     private formBuilder: FormBuilder,

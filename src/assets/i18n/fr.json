@@ -123,12 +123,21 @@
     "TITLE": "Mon compte"
   },
   "BASKET": {
-    "TITLE": "Panier",
-    "PRODUCT": "Produit",
-    "LABEL": "Label",
-    "PRICE": "Prix",
-    "QUANTITY": "Quantité",
-    "TOTAL": "Total"
+    "DELIVERY": "Livraison",
+    "DELIVERY_POSSIBILITIES": "Expédition en 48h<br>Livraison Offerte<br>à partir de 200€ d’achats",
+    "EMPTY_LIST": "Vous n'avez pas d'article dans votre pannier !",
+    "ENTER_PROMO_CODE": "Entrer votre code promo",
+    "GIFTED": "Offerte",
+    "GOT_PROMO_CODE": "Vous avez un code promo ?",
+    "NEED_HELP": "Une question, besoin d’aide ?<br>contactpremierebase@gmail.com<br>07 82 11 22 93",
+    "PAIEMENT_POSSIBILITIES": "Par carte bancaire<br>(Visa, MasterCard, CB),<br>PayPal, Apple Pay…",
+    "QUICK_DELIVERY": "Livraison rapide",
+    "REMOVE": "Supprimer",
+    "FREE_RETURN": "Retour gratuit",
+    "SECURED_PAIEMENT": "Paiement sécurisé",
+    "TOTAL_WD": "Sous-total",
+    "TOTAL": "Total",
+    "TITLE": "Panier"
   },
   "BRAND": {
     "AMBITION": "Première Base a pour ambition de retranscrire sa vision de l’impact intemporel de la musique, du sport, de la mode et du design à travers une esthétique épurée et colorée propre à ses inspirations. Les illustrations sont imaginées, dessinées et imprimées à Paris.",
@@ -230,7 +239,8 @@
       "DISCOVER_STUDIO": "Découvrez le studio",
       "MORE_PRODUCT": "Afficher plus de produits",
       "SEND": "Envoyer",
-      "SPOTIFY": "Les meilleurs playlists Spotify"
+      "SPOTIFY": "Les meilleurs playlists Spotify",
+      "VALIDATE": "Valider"
     }
   }
 }

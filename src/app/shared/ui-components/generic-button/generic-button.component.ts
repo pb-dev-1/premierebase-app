@@ -10,5 +10,6 @@ export type color = 'primary' | 'secondary'
 export class GenericButtonComponent {
   @Input() public label: string
   @Input() public color: color = 'primary'
+  @Input() public disabled: Boolean = false
 
 }

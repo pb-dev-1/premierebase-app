@@ -1,17 +1,20 @@
 import {Injectable} from '@angular/core'
 import {BehaviorSubject} from 'rxjs'
 
+import {Illustration} from '../illustration/illustration.model'
+import {BasketItem} from './basket.model'
+
 @Injectable({
   providedIn: 'root'
 })
 export class BasketService {
-  products$: BehaviorSubject<any[]> = new BehaviorSubject(undefined)
+  products$: BehaviorSubject<BasketItem[]> = new BehaviorSubject(undefined)
 
   constructor() {
     this.products$.next(JSON.parse(localStorage.getItem('products')) || [])
   }
 
-  addProduct(product, selectedFormat, selectedQuantity) {
+  addProduct(product: Illustration, selectedFormat: any, selectedQuantity: number) {
     const alreadyStoredItems = this.products$.getValue()
     const format = product.formats.filter(format => format.format._id === selectedFormat)[0]
     let item = alreadyStoredItems.find(i => i._id === product._id && i.format.format._id === format.format._id)
@@ -38,8 +41,15 @@ export class BasketService {
     localStorage.setItem('products', JSON.stringify(items))
   }
 
-  removeProduct(product) {
-    const filteredProducts = this.products$.getValue().filter(i => (i._id === product._id && i.format.format._id !== product.format.format._id) || i._id !== product._id)
+  updateProducts(products: BasketItem[]) {
+    this.products$.next(products)
+    localStorage.setItem('products', JSON.stringify(products))
+  }
+
+  removeProduct(product: BasketItem) {
+    const filteredProducts = this.products$.getValue().filter(i => {
+      return (i._id === product._id && i.format.format._id !== product.format.format._id) || i._id !== product._id
+    })
     this.products$.next(filteredProducts)
     localStorage.setItem('products', JSON.stringify(filteredProducts))
   }

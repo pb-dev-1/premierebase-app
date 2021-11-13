@@ -46,19 +46,11 @@
             </mat-select>
           </mat-form-field>
 
-          <div class="quantity-container">
-            <div class="quantity-title" translate>ILLUSTRATION.QUANTITY</div>
-            <div fxLayout="row" fxLayoutAlign="space-between center" class="quantity-input">
-              <button mat-button [disabled]="selectedQuantity < 2" (click)="decrease()">
-                <mat-icon>remove</mat-icon>
-              </button>
-             
-              <span>{{selectedQuantity}}</span>
-              <button mat-button [disabled]="selectedQuantity >= illustration.stock" (click)="increase()">
-                <mat-icon>add</mat-icon>
-              </button>
-            </div>
-          </div>
+          <pb-quantity-selector
+            [quantity]="selectedQuantity"
+            [maxQuantity]="illustration.stock"
+            (changeQuantity)="onChangeQuantity($event)"
+          ></pb-quantity-selector>
          
           <p>{{'ILLUSTRATION.STOCK' | translate: {stock: illustration.stock} }}</p>
           <p class="price">{{getPrice()}}</p>

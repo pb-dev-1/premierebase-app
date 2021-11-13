@@ -1,0 +1,23 @@
+<div
+  [fxLayout]="inline ? 'row' : 'column'"
+  fxLayoutAlign="flex-start center"
+  [fxLayoutGap]="inline ? '15px' : '5px'"
+  class="quantity-container {{size}}"
+>
+  <div class="quantity-title" translate>ILLUSTRATION.QUANTITY</div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="quantity-input">
+    <button
+      mat-button
+      [disabled]="quantity < 2"
+      (click)="decrease()"
+      class="decrease"
+    ><mat-icon>remove</mat-icon></button>
+    <span>{{quantity}}</span>
+    <button
+      mat-button
+      [disabled]="quantity >= maxQuantity"
+      (click)="increase()"
+      class="increase"
+    ><mat-icon>add</mat-icon></button>
+  </div>
+</div>

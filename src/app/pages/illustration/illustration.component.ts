@@ -47,12 +47,8 @@ export class IllustrationComponent implements OnInit {
     this.selectedImage = img
   }
 
-  increase() {
-    this.selectedQuantity += 1
-  }
-
-  decrease() {
-    this.selectedQuantity -= 1
+  onChangeQuantity(quantity: number) {
+    this.selectedQuantity = quantity
   }
 
   getPrice() {
