@@ -1,40 +1,78 @@
-<div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="250px">
+<div
+  fxLayout="column"
+  fxLayout.gt-sm="row"
+  fxLayoutAlign.gt-sm="space-between"
+  fxLayoutGap.gt-sm="250px"
+>
 
-  <div class="footer-left">
-    <h1 class="footer-title">Première Base</h1>
-    <div fxLayoutAlign="space-between" fxLayout.xs="column" class="footer-socials">
-      <a>INSTAGRAM</a>
-      <a>FACEBOOK</a>
-      <a>PINTEREST</a>
-      <a>SPOTIFY</a>
+  <div
+    fxLayout="column"
+    fxLayoutGap="30px"
+    fxLayoutGap.gt-sm="50px"
+    class="footer-left"
+  >
+    <h1 class="footer-title">{{'FOOTER.TITLE' | translate}}</h1>
+    <div
+      fxLayout="column"
+      fxLayout.gt-sm="row"
+      fxLayoutAlign="center"
+      fxLayoutAlign.gt-sm="flex-start"
+      fxLayoutGap="15px"
+      fxLayoutGap.gt-sm="20px"
+      class="footer-socials"
+    >
+      <a [href]="env.instagram" target="_blank">
+        INSTAGRAM
+      </a>
+      <a [href]="env.facebook" target="_blank">
+        FACEBOOK
+      </a>
+      <a [href]="env.pinterest" target="_blank">
+        PINTEREST
+      </a>
+      <a [href]="env.spotify" target="_blank">
+        SPOTIFY
+      </a>
     </div>
 
-    <div fxLayout="row" fxLayout.xs="column">
-      <div fxFlex="65%" class="footer-description">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+    <div
+      fxLayout="column"
+      fxLayout.gt-sm="row"
+      fxLayoutGap="30px"
+      fxLayoutGap.gt-sm="50px"
+    >
+      <div class="footer-description">
+        {{'FOOTER.DESCRIPTION' | translate}}
       </div>
-      <div fxFlex="35%">
+      <div>
         <ul class="footer-menu">
-          <li><a>Collections</a></li>
-          <li><a>Shop</a></li>
-          <li><a>Studio</a></li>
-          <li><a>La marque</a></li>
-          <li><a>Journal</a></li>
+          <li><a routerLink="/collections">{{'NAV.LEFT.COLLECTIONS' | translate}}</a></li>
+          <li><a routerLink="/illustrations">{{'NAV.LEFT.SHOP' | translate}}</a></li>
+          <li><a>{{'NAV.LEFT.STUDIO' | translate}}</a></li>
+          <li><a routerLink="/brand">{{'NAV.LEFT.BRAND' | translate}}</a></li>
+          <li><a routerLink="/journal">{{'NAV.LEFT.JOURNAL' | translate}}</a></li>
         </ul>
       </div>
     </div>
 
-    <div fxLayoutAlign="space-between" class="footer-links">
-      <a>Mentions légales</a>
-      <a>Crédits</a>
-      <a>Plan du site</a>
-      <a>Livraison</a>
-      <a>FAQ</a>
-      <a>CGV</a>
+    <div
+      fxLayout="column"
+      fxLayout.gt-sm="row"
+      fxLayoutAlign="center"
+      fxLayoutAlign.gt-sm="space-between"
+      fxLayoutGap="10px"
+      class="footer-links"
+    >
+      <a>{{'FOOTER.LEGAL_MENTION' | translate}}</a>
+      <a>{{'FOOTER.CREDITS' | translate}}</a>
+      <a>{{'FOOTER.SITE' | translate}}</a>
+      <a>{{'FOOTER.DELIVERY' | translate}}</a>
+      <a>{{'FOOTER.FAQ' | translate}}</a>
+      <a>{{'FOOTER.CGV' | translate}}</a>
     </div>
   </div>
 
-  <div fxLayoutAlign="center center" fxHide.lt-md class="footer-right">
+  <div fxLayoutAlign="center center" class="footer-right">
     <img src="assets/images/logos/logo-1.svg">
   </div>
 

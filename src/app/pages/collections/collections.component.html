@@ -1,7 +1,6 @@
 <pb-page-layout color="black">
   <ng-container page>
     <div class="collections">
-
       <h1>{{'COLLECTIONS.TITLE' | translate}}</h1>
 
       <ng-container *ngFor="let collection of collections$ | async">
@@ -32,12 +31,11 @@
             </div>
           </div>
 
-
         </div>
       </ng-container>
-
-      <pb-newsletter></pb-newsletter>
-      <pb-footer></pb-footer>
     </div>
+
+    <pb-newsletter></pb-newsletter>
+    <pb-footer></pb-footer>
   </ng-container>
 </pb-page-layout>

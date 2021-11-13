@@ -6,12 +6,10 @@
 }
 
 .footer-left {
-  padding: 0 55px;
-  max-width: 465px;
 
   .footer-title {
     font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
-    font-size: 52px;
+    font-size: 50px;
     margin: 0 0 15px;
   }
 
@@ -24,14 +22,13 @@
   .footer-description {
     font-family: Fixture-Expanded-Light, "Helvetica Neue", sans-serif;
     font-size: 14px;
-    padding-right: 50px;
-    margin-bottom: 200px;
     text-align: left;
   }
 
   .footer-menu {
     font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
     margin: 0;
+    padding: 0;
     list-style: none;
     text-align: left;
 
@@ -44,5 +41,34 @@
     font-size: 9px;
     margin-bottom: 20px;
   }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
+@media(min-width: 992px) {
+  .footer-left {
+    padding: 0 55px;
+    max-width: 570px;
+  }
+}
+
+@media(max-width: 992px) {
+  .footer-left {
+    padding: 0 15px;
+
+    .footer-title,
+    .footer-socials,
+    .footer-description,
+    .footer-menu,
+    .footer-links {
+      text-align: center;
+    }
+  }
+
+  .footer-right {
+    min-height: 500px;
+  }
+}

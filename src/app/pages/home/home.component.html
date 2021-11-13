@@ -13,9 +13,6 @@
         <pb-items-container [items]="newestItems$ | async"></pb-items-container>
       </div>
 
-      <!-- Highlighted item -->
-      <pb-highlighted-item *ngIf="highlightedItem$ | async" [item]="highlightedItem$ | async"></pb-highlighted-item>
-
       <!-- Illustrations -->
       <div
         fxLayout="column"
@@ -42,6 +39,7 @@
              *ngIf="(collections$ | async)?.length"
              [label]="'HOME.COLLECTIONS_LINK' | translate"
              link="/collections"
+             fxHide.lt-md
            ></pb-arrow-link>
          </div>
 
@@ -91,7 +89,11 @@
           class="section-title-container"
         >
           <h2 class="section-title-2">{{'HOME.COLLECTION_TITLE' | translate}}</h2>
-          <pb-arrow-link [label]="'HOME.COLLECTION_LINK' | translate" link="/collections"></pb-arrow-link>
+          <pb-arrow-link
+            [label]="'HOME.COLLECTION_LINK' | translate"
+            link="/collections"
+            fxHide.lt-md
+          ></pb-arrow-link>
         </div>
 
         <p style="padding: 0 50px;">Désolé ! Nous n'avons pas de collaboration pour le moment.</p>

@@ -16,7 +16,6 @@ import {environment} from '@env/environment'
 export class HomeComponent {
   env = environment
   newestItems$: Observable<Illustration[]> =  this.illustrationService.getNewestIllustrations()
-  highlightedItem$: Observable<Illustration> = this.illustrationService.getHighlightedIllustration()
   illustrations$: Observable<Illustration[]> = this.illustrationService.illustrations$.pipe(
     tap(illustrations => {
       if (!illustrations) {

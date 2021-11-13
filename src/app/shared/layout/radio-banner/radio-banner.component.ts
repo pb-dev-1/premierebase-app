@@ -1,5 +1,7 @@
 import {Component} from '@angular/core'
 
+import {environment} from '@env/environment'
+
 @Component({
   selector: 'pb-radio-banner',
   templateUrl: './radio-banner.component.html',
@@ -8,5 +10,9 @@ import {Component} from '@angular/core'
 export class RadioBannerComponent {
 
   constructor() { }
+
+  openSpotify() {
+    window.open(environment.spotify, "_blank");
+  }
 
 }
