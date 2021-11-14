@@ -36,10 +36,22 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route = this.router.url.split('/')[this.router.url.split('/').length - 1]
-    if (localStorage.getItem('language')) {
-      this.currentLang = localStorage.getItem('language') === 'en' ? 'gb' : localStorage.getItem('language')
+    const availableLanguages = ['fr', 'en']
+    const storedLang = localStorage.getItem('language')
+    if (availableLanguages.includes(storedLang)) {
+      this.translate.use(storedLang)
+      this.currentLang = storedLang === 'en' ? 'gb' : storedLang
+    } else {
+      const browserLang = this.translate.getBrowserLang()
+      if (availableLanguages.includes(browserLang)) {
+        this.translate.use(browserLang)
+        this.currentLang = browserLang === 'en' ? 'gb' : browserLang
+      }  else {
+        this.translate.use('en')
+        this.currentLang = 'gb'
+      } 
     }
+    this.route = this.router.url.split('/')[this.router.url.split('/').length - 1]
   }
 
   navigate(route: string) {
