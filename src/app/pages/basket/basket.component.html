@@ -28,14 +28,14 @@
           <ng-container matColumnDef="format">
             <mat-header-cell *matHeaderCellDef translate></mat-header-cell>
             <mat-cell *matCellDef="let element">
-               {{element.format.format.label}}
+               {{element.format.label}}
             </mat-cell>
           </ng-container>
       
           <ng-container matColumnDef="price">
             <mat-header-cell *matHeaderCellDef translate></mat-header-cell>
             <mat-cell *matCellDef="let element">
-              {{element.format.price[0]}}
+              {{element.format.price}}
             </mat-cell>
           </ng-container>
       
@@ -55,7 +55,7 @@
           <ng-container matColumnDef="total">
             <mat-header-cell *matHeaderCellDef translate></mat-header-cell>
             <mat-cell *matCellDef="let element">
-              {{element.format.price[0] * element.quantity}}
+              {{element.format.price * element.quantity}}
             </mat-cell>
           </ng-container>
       

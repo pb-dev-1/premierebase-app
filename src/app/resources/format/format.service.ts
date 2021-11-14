@@ -38,9 +38,11 @@ export class FormatService {
 
   updateOrCreateObjectInList(format: Format) {
     const currentFormats = this.formats$.getValue()
-    const formatIndex = currentFormats.findIndex(f => format._id === f._id)
-    currentFormats && formatIndex !== -1 ? currentFormats[formatIndex] = format : currentFormats.push(format)
-    this.formats$.next(currentFormats)
+    if (currentFormats) {
+      const formatIndex = currentFormats.findIndex(f => format._id === f._id)
+      currentFormats && formatIndex !== -1 ? currentFormats[formatIndex] = format : currentFormats.push(format)
+      this.formats$.next(currentFormats)
+    }
   }
 
   deleteObjectInList(id: string) {

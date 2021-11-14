@@ -39,7 +39,7 @@ export class IllustrationComponent implements OnInit {
       this.illustration = illustration
 
       this.selectedImage = this.illustration.images.packShot
-      this.selectedFormat = this.illustration.formats[0].format._id
+      this.selectedFormat = this.illustration.formats[0].format
     })
   }
 
@@ -52,8 +52,8 @@ export class IllustrationComponent implements OnInit {
   }
 
   getPrice() {
-    const format = this.illustration.formats.filter(format => format.format._id === this.selectedFormat)[0]
-    return `${format.price[0] * this.selectedQuantity} €`
+    const format = this.illustration.formats.filter(format => format.format === this.selectedFormat)[0]
+    return `${format.price * this.selectedQuantity} €`
   }
 
   addToCart() {

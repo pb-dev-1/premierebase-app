@@ -16,8 +16,8 @@ export class BasketService {
 
   addProduct(product: Illustration, selectedFormat: any, selectedQuantity: number) {
     const alreadyStoredItems = this.products$.getValue()
-    const format = product.formats.filter(format => format.format._id === selectedFormat)[0]
-    let item = alreadyStoredItems.find(i => i._id === product._id && i.format.format._id === format.format._id)
+    const format = product.formats.filter(format => format.format === selectedFormat)[0]
+    let item = alreadyStoredItems.find(i => i._id === product._id && i.format.format._id === format.format)
 
     item = !item
     ? {
@@ -33,7 +33,7 @@ export class BasketService {
     }
      
     const items = [
-      ...alreadyStoredItems.filter(i => (i._id === item._id && i.format.format._id !== format.format._id) || i._id !== item._id),
+      ...alreadyStoredItems.filter(i => (i._id === item._id && i.format.format !== format.format) || i._id !== item._id),
       item
     ]
 
@@ -48,7 +48,7 @@ export class BasketService {
 
   removeProduct(product: BasketItem) {
     const filteredProducts = this.products$.getValue().filter(i => {
-      return (i._id === product._id && i.format.format._id !== product.format.format._id) || i._id !== product._id
+      return (i._id === product._id && i.format.format !== product.format.format) || i._id !== product._id
     })
     this.products$.next(filteredProducts)
     localStorage.setItem('products', JSON.stringify(filteredProducts))

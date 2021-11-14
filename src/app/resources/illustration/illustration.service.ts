@@ -68,9 +68,11 @@ export class IllustrationService {
 
   updateOrCreateObjectInList(illustration: Illustration) {
     const currentIllustrations = this.illustrations$.getValue()
-    const illustrationIndex = currentIllustrations.findIndex(i => illustration._id === i._id)
-    currentIllustrations && illustrationIndex !== -1 ? currentIllustrations[illustrationIndex] = illustration : currentIllustrations.push(illustration)
-    this.illustrations$.next(currentIllustrations)
+    if (currentIllustrations) {
+      const illustrationIndex = currentIllustrations.findIndex(i => illustration._id === i._id)
+      currentIllustrations && illustrationIndex !== -1 ? currentIllustrations[illustrationIndex] = illustration : currentIllustrations.push(illustration)
+      this.illustrations$.next(currentIllustrations)
+    }
   }
 
   deleteObjectInList(id: string) {

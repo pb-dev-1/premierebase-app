@@ -56,9 +56,11 @@ export class CollectionService {
 
   updateOrCreateObjectInList(collection: Collection) {
     const currentCollections = this.collections$.getValue()
-    const collectionIndex = currentCollections.findIndex(c => collection._id === c._id)
-    currentCollections && collectionIndex !== -1 ? currentCollections[collectionIndex] = collection : currentCollections.push(collection)
-    this.collections$.next(currentCollections)
+    if (currentCollections) {
+      const collectionIndex = currentCollections.findIndex(c => collection._id === c._id)
+      currentCollections && collectionIndex !== -1 ? currentCollections[collectionIndex] = collection : currentCollections.push(collection)
+      this.collections$.next(currentCollections)
+    }
   }
 
   deleteObjectInList(id: string) {

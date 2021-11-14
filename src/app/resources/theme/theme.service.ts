@@ -38,9 +38,11 @@ export class ThemeService {
 
   updateOrCreateObjectInList(theme: Theme) {
     const currentThemes = this.themes$.getValue()
-    const themeIndex = currentThemes.findIndex(t => theme._id === t._id)
-    currentThemes && themeIndex !== -1 ? currentThemes[themeIndex] = theme : currentThemes.push(theme)
-    this.themes$.next(currentThemes)
+    if (currentThemes) {
+      const themeIndex = currentThemes.findIndex(t => theme._id === t._id)
+      currentThemes && themeIndex !== -1 ? currentThemes[themeIndex] = theme : currentThemes.push(theme)
+      this.themes$.next(currentThemes)
+    }
   }
 
   deleteObjectInList(id: string) {

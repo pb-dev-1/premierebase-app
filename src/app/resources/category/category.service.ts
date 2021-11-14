@@ -38,9 +38,11 @@ export class CategoryService {
 
   updateOrCreateObjectInList(category: Category) {
     const currentCategories = this.categories$.getValue()
-    const categoryIndex = currentCategories.findIndex(c => category._id === c._id)
-    currentCategories && categoryIndex !== -1 ? currentCategories[categoryIndex] = category : currentCategories.push(category)
-    this.categories$.next(currentCategories)
+    if (currentCategories) {
+      const categoryIndex = currentCategories.findIndex(c => category._id === c._id)
+      currentCategories && categoryIndex !== -1 ? currentCategories[categoryIndex] = category : currentCategories.push(category)
+      this.categories$.next(currentCategories)
+    }
   }
 
   deleteObjectInList(id: string) {

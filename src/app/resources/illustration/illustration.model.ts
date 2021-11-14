@@ -10,10 +10,9 @@ export interface Illustration {
   collec: Collection
   theme: Theme
   formats: {
-    format: {
-      _id: string
-      label: string
-    }
+    _id: string
+    format: string
+    label: string
     price: number
   }[]
   stock: number

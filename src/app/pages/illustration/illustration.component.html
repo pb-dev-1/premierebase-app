@@ -40,8 +40,8 @@
           <mat-form-field appearance="standard">
             <mat-label translate>ILLUSTRATION.FORMAT</mat-label>
             <mat-select [(ngModel)]="selectedFormat">
-              <mat-option *ngFor="let format of illustration.formats" [value]="format.format._id">
-                {{format.format.label}}
+              <mat-option *ngFor="let format of illustration.formats" [value]="format.format">
+                {{format.label}}
               </mat-option>
             </mat-select>
           </mat-form-field>

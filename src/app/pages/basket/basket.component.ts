@@ -22,7 +22,7 @@ export class BasketComponent {
     let t = 0
     const savedProducts = this.savedProducts$.getValue()
     if (!savedProducts?.length) return 0
-    savedProducts.forEach(product => t += product.format.price[0] * product.quantity)
+    savedProducts.forEach(product => t += product.format.price * product.quantity)
     return t
   }
 

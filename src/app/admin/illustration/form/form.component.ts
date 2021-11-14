@@ -103,9 +103,9 @@ export class FormComponent implements OnChanges {
   buildForm() {
     this.illustrationForm = this.formBuilder.group({
       label: new FormControl(this.illustration?.label || '', [Validators.required]),
-      category: new FormControl(this.illustration?.category || '', [Validators.required]),
-      collec: new FormControl(this.illustration?.collec || undefined),
-      theme: new FormControl(this.illustration?.theme || '', [Validators.required]),
+      category: new FormControl(this.illustration?.category._id || '', [Validators.required]),
+      collec: new FormControl(this.illustration?.collec._id || undefined),
+      theme: new FormControl(this.illustration?.theme._id || '', [Validators.required]),
       formats: this.formBuilder.array([]),
       stock: new FormControl(this.illustration?.stock || '', [Validators.required]),
       details: new FormControl(this.illustration?.details || '', [Validators.required]),
