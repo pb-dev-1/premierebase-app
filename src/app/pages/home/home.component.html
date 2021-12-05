@@ -28,35 +28,45 @@
       </div>
 
       <!-- Collections -->
-      <div class="section-container">
-         <div
-           fxLayout="row"
-           fxLayoutAlign="space-between"
-           class="section-title-container"
-         >
-           <h2 class="section-title-2">{{'HOME.COLLECTIONS_TITLE' | translate}}</h2>
-           <pb-arrow-link
-             *ngIf="(collections$ | async)?.length"
-             [label]="'HOME.COLLECTIONS_LINK' | translate"
-             link="/collections"
-             fxHide.lt-md
-           ></pb-arrow-link>
-         </div>
+      <div class="collection-section">
+        <div
+          fxLayout="row"
+          fxLayoutAlign="center center"
+          fxLayoutAlign.gt-sm="space-between center"
+          class="collection-title-row"
+        >
+          <h2>{{'HOME.COLLECTIONS_TITLE' | translate}}</h2>
+          <pb-arrow-link
+            *ngIf="(collections$ | async)?.length"
+            [label]="'HOME.COLLECTIONS_LINK' | translate"
+            link="/collections"
+            fxHide.lt-md
+          ></pb-arrow-link>
+        </div>
 
-         <div fxLayout="row">
-           <img
-             *ngFor="let collection of collections$ | async"
-             class="collection-img"
-             [src]="env.uploads + collection.images.home"
-             [alt]="collection.label"
-           >
-         </div>
+        <div
+          fxLayout="row"
+          fxLayoutGap="75px"
+          class="collection-image-row"
+        >
+          <ng-container *ngFor="let collection of collections$ | async">
+            <div fxLayout="column" fxLayoutAlign="flex-start center" (click)="goToCollection(collection._id)">
+              <img 
+                class="collection-image"
+                [src]="env.uploads + collection.images.home"
+                [alt]="collection.label"
+              >
+              <h3>{{collection.label}}</h3>
+              <p>{{collection.theme.label}}</p>
+            </div>
+          </ng-container>
+        </div>
 
         <p
           *ngIf="!(collections$ | async)?.length"
           style="padding: 0 50px;"
         >Désolé ! Nous n'avons pas de collection pour le moment.</p>
-       </div>
+      </div>
 
       <!-- Studio -->
       <div fxLayout="column wrap" fxLayout.gt-xs="row wrap">
@@ -82,13 +92,14 @@
       </div>
 
       <!-- Collaboration -->
-      <div class="section-container">
+      <div class="collection-section">
         <div
           fxLayout="row"
-          fxLayoutAlign="space-between"
-          class="section-title-container"
+          fxLayoutAlign="center center"
+          fxLayoutAlign.gt-sm="space-between center"
+          class="collection-title-row"
         >
-          <h2 class="section-title-2">{{'HOME.COLLECTION_TITLE' | translate}}</h2>
+          <h2>{{'HOME.COLLECTION_TITLE' | translate}}</h2>
           <pb-arrow-link
             [label]="'HOME.COLLECTION_LINK' | translate"
             link="/collections"
@@ -96,7 +107,7 @@
           ></pb-arrow-link>
         </div>
 
-        <p style="padding: 0 50px;">Désolé ! Nous n'avons pas de collaboration pour le moment.</p>
+        <p style="padding: 0 75px;">Désolé ! Nous n'avons pas de collaboration pour le moment.</p>
       </div>
 
       <pb-radio-banner></pb-radio-banner>
