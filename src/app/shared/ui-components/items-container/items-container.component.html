@@ -1,10 +1,9 @@
 <div
-  fxLayout="column wrap"
-  fxLayout.gt-xs="row wrap"
+  fxLayout="row wrap"
   fxLayoutAlign="center center"
   class="items-container"
 >
-  <ng-container *ngFor="let item of items">
+  <ng-container *ngFor="let item of getItems()">
     <pb-item-card [item]="item"></pb-item-card>
   </ng-container>
   <p *ngIf="!items?.length">Désolé ! Nous n'avons pas de produit disponible pour le moment.</p>

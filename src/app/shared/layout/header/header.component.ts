@@ -16,8 +16,6 @@ export class HeaderComponent implements OnInit {
 
   showAuthenticationPop = false
   route = ''
-  currentLang = 'fr'
-  countryCodes = ['fr', 'gb']
   savedProducts$ = this.basketService.products$
   navs = [
     {route: 'collections', text: 'NAV.LEFT.COLLECTIONS'},
@@ -40,15 +38,12 @@ export class HeaderComponent implements OnInit {
     const storedLang = localStorage.getItem('language')
     if (availableLanguages.includes(storedLang)) {
       this.translate.use(storedLang)
-      this.currentLang = storedLang === 'en' ? 'gb' : storedLang
     } else {
       const browserLang = this.translate.getBrowserLang()
       if (availableLanguages.includes(browserLang)) {
         this.translate.use(browserLang)
-        this.currentLang = browserLang === 'en' ? 'gb' : browserLang
       }  else {
         this.translate.use('en')
-        this.currentLang = 'gb'
       } 
     }
     this.route = this.router.url.split('/')[this.router.url.split('/').length - 1]
@@ -64,10 +59,11 @@ export class HeaderComponent implements OnInit {
   }
 
   changeLang(lang: string) {
-    if (lang === 'gb') {
-      lang = 'en'
-    }
     this.translate.use(lang)
     localStorage.setItem('language', lang)
+  }
+
+  get nbSavedProducts() {
+    return this.basketService.products$.value.reduce((previousValue, currentValue) => previousValue + currentValue.quantity, 0)
   }
 }

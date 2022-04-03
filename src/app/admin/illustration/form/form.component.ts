@@ -104,8 +104,8 @@ export class FormComponent implements OnChanges {
     this.illustrationForm = this.formBuilder.group({
       label: new FormControl(this.illustration?.label || '', [Validators.required]),
       category: new FormControl(this.illustration?.category._id || '', [Validators.required]),
-      collec: new FormControl(this.illustration?.collec._id || undefined),
-      theme: new FormControl(this.illustration?.theme._id || '', [Validators.required]),
+      collec: new FormControl(this.illustration?.collec?._id || undefined),
+      theme: new FormControl(this.illustration?.theme?._id || undefined),
       formats: this.formBuilder.array([]),
       stock: new FormControl(this.illustration?.stock || '', [Validators.required]),
       details: new FormControl(this.illustration?.details || '', [Validators.required]),
@@ -173,8 +173,8 @@ export class FormComponent implements OnChanges {
     }
   }
 
-  onDeleteDetail(illustration, detail) {
-    if (detail) {
+  onDeleteDetail(illustration, detail, isUploaded) {
+    if (isUploaded) {
       this.illustrationService.deleteDetail(illustration._id, detail).subscribe(() => {
         this.illustration.images.details = this.illustration.images.details.filter(d => d !== detail)
       })

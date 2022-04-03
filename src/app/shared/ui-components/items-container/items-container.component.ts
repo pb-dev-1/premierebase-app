@@ -8,7 +8,8 @@ import {Illustration} from '@resources/illustration/illustration.model'
 })
 export class ItemsContainerComponent implements OnInit {
   @Input() public items: Illustration[]
-  @Input() public perLine = 3
+  @Input() public perLine = 4
+  @Input() public maxItems: number
 
   itemSize: string
 
@@ -20,6 +21,10 @@ export class ItemsContainerComponent implements OnInit {
 
   getItemSize() {
     return 100 / this.perLine + '%'
+  }
+
+  getItems() {
+    return this.maxItems ? this.items?.slice(0, this.maxItems) : this.items
   }
 
 }

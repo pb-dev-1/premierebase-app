@@ -1,31 +1,41 @@
 import {Injectable} from '@angular/core'
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpParams} from '@angular/common/http'
 import {Observable, BehaviorSubject} from 'rxjs'
 
 import {environment} from '@env/environment'
-import {Illustration} from '@resources/illustration/illustration.model'
+import {Illustration, IllustrationParams} from '@resources/illustration/illustration.model'
 
 @Injectable({
   providedIn: 'root'
 })
 export class IllustrationService {
   public illustrations$: BehaviorSubject<Illustration[]> = new BehaviorSubject(undefined)
+  public maxItems$: BehaviorSubject<number> = new BehaviorSubject(undefined)
+  public newestIllustrations$: BehaviorSubject<Illustration[]> = new BehaviorSubject(undefined)
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  getIllustrations() {
-    return this.http.get(environment.api + '/illustrations')
-      .subscribe((illustrations: Illustration[]) => this.illustrations$.next(illustrations))
+  getIllustrations(httpParams?: IllustrationParams) {
+    const params = new HttpParams({fromObject: {...httpParams}})
+
+    return this.http.get(environment.api + '/illustrations', {params})
+      .subscribe((data: {illustrations: Illustration[], maxItems: number}) => {
+        this.illustrations$.next(data.illustrations)
+        this.maxItems$.next(data.maxItems)
+      })
   }
 
   getIllustration(id: string): Observable<Illustration> {
     return this.http.get(`${environment.api}/illustrations/${id}`) as Observable<Illustration>
   }
 
-  getNewestIllustrations(): Observable<Illustration[]> {
-    return this.http.get(environment.api + '/illustrations/newest') as Observable<Illustration[]>
+  getNewestIllustrations() {
+    const params = new HttpParams().set('perPage', '3')
+
+    return this.http.get(environment.api + '/illustrations', {params})
+      .subscribe((data: {illustrations: Illustration[], maxItems: number}) => this.newestIllustrations$.next(data.illustrations))
   }
 
   getHighlightedIllustration(): Observable<Illustration> {
@@ -62,8 +72,8 @@ export class IllustrationService {
     return this.http.delete(`${environment.api}/illustrations/${id}/delete`)
   }
 
-  deleteDetail(illustrationId: string, id: string) {
-    return this.http.post(`${environment.api}/illustrations/${illustrationId}/detail/${id}/delete`, {})
+  deleteDetail(illustrationId: string, detail: string) {
+    return this.http.post(`${environment.api}/illustrations/${illustrationId}/detail/delete`, {detail})
   }
 
   updateOrCreateObjectInList(illustration: Illustration) {

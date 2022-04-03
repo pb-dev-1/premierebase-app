@@ -1,6 +1,5 @@
-import {Component, Input} from '@angular/core'
+import {Component, Input, OnInit} from '@angular/core'
 import {Router} from '@angular/router'
-import {DomSanitizer} from '@angular/platform-browser'
 
 import {environment} from '@env/environment'
 import {Illustration} from '@resources/illustration/illustration.model'
@@ -10,17 +9,26 @@ import {Illustration} from '@resources/illustration/illustration.model'
   templateUrl: './item-card.component.html',
   styleUrls: ['./item-card.component.scss']
 })
-export class ItemCardComponent {
+export class ItemCardComponent implements OnInit {
   @Input() public item: Illustration
+
   env = environment
+  imgUrl = ''
 
   constructor(
     private router: Router,
-    private domSanitizer: DomSanitizer,
   ) { }
+
+  ngOnInit(): void {
+    this.initFirstImage()
+  }
 
   goToIllustration(id: string) {
     this.router.navigate(['/illustrations', id])
+  }
+
+  getImage() {
+    return this.env.uploads + this.imgUrl
   }
 
   minPrice() {
@@ -31,16 +39,12 @@ export class ItemCardComponent {
     return this.item?.formats ? Math.max.apply(Math, this.item.formats.map(format => format.price)) : 0
   }
 
-  imgUrl(item) {
-    let base64String = ''
-    if (item.images.packShot.data?.data) {
-      const TYPED_ARRAY = new Uint8Array(item.images.packShot.data?.data)
-      const STRING_CHAR = String.fromCharCode.apply(null, TYPED_ARRAY)
-      base64String = btoa(STRING_CHAR)
-    } else {
-      base64String = item.images.packShot.data
-    }
-
-    return this.domSanitizer.bypassSecurityTrustUrl('data:' + item.images.packShot.contentType + ';base64,' + base64String)
+  initFirstImage() {
+    this.imgUrl = this.item?.images.packShot
   }
+
+  initSecondImage() {
+    this.imgUrl = this.item?.images.settingScene
+  }
+
 }

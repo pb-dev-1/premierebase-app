@@ -8,9 +8,9 @@
       </div>
 
       <!-- Newest items -->
-      <div fxLayout="column" class="section-container">
+      <div fxLayout="column" fxLayoutAlign="center center" class="section-container">
         <h2 class="section-title">{{'HOME.NEWEST_TITLE' | translate}}</h2>
-        <pb-items-container [items]="newestItems$ | async"></pb-items-container>
+        <pb-items-container [items]="newestItems$ | async" [maxItems]="3" [perLine]="3"></pb-items-container>
       </div>
 
       <!-- Illustrations -->
@@ -20,7 +20,7 @@
         class="section-container"
       >
         <h2 class="section-title">{{'HOME.ILLUSTRATION_TITLE' | translate}}</h2>
-        <pb-items-container [items]="illustrations$ | async"></pb-items-container>
+        <pb-items-container [items]="illustrations$ | async" [maxItems]="12" [perLine]="4"></pb-items-container>
         <pb-generic-button
           *ngIf="(illustrations$ | async)?.length"
           [label]="'SHARED.GENERIC_BUTTON.MORE_PRODUCT' | translate"
@@ -46,7 +46,6 @@
 
         <div
           fxLayout="row"
-          fxLayoutGap="75px"
           class="collection-image-row"
         >
           <ng-container *ngFor="let collection of collections$ | async">
@@ -59,6 +58,7 @@
               <h3>{{collection.label}}</h3>
               <p>{{collection.theme.label}}</p>
             </div>
+            <div class="forced-gap">&nbsp;</div>
           </ng-container>
         </div>
 

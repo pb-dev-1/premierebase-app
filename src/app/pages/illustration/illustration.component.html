@@ -34,8 +34,6 @@
 
         <div class="info-container">
           <h1>{{illustration.label}}</h1>
-          <p>{{illustration.category.label}}</p>
-          <p></p>
 
           <mat-form-field appearance="standard">
             <mat-label translate>ILLUSTRATION.FORMAT</mat-label>
@@ -69,15 +67,9 @@
           Content 2
         </mat-tab>
         <mat-tab [label]="'ILLUSTRATION.FORMATS' | translate">
-          Content 3
+          {{illustration.formats}}
         </mat-tab>
       </mat-tab-group>
-
-
-      <div *ngIf="(similarIllustrations$ | async)?.length" class="section">
-        <h2 translate>ILLUSTRATION.SIMILAR_PRODUCTS</h2>
-        <pb-items-container [items]="similarIllustrations$ | async"></pb-items-container>
-      </div>
 
       <div *ngIf="illustration.collec" class="section">
         <h2>{{illustration.collec.label}}</h2>
@@ -91,6 +83,16 @@
             <img [src]="env.uploads + image">
           </div>
         </ngx-masonry>
+      </div>
+
+      <div
+        *ngIf="(similarIllustrations$ | async)?.length"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        class="section"
+      >
+        <h2 translate>ILLUSTRATION.SIMILAR_PRODUCTS</h2>
+        <pb-items-container [items]="similarIllustrations$ | async"></pb-items-container>
       </div>
     
     </div>

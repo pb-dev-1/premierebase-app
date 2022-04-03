@@ -26,11 +26,15 @@ export class BasketComponent {
     return t
   }
 
-  onChangeQuantity(quantity: number, productId: string) {
+  get delivery() {
+    return 5
+  }
+
+  onChangeQuantity(quantity: number, product: BasketItem) {
     const savedProducts = this.savedProducts$.getValue()
-    savedProducts.forEach(product => {
-      if (product._id === productId) {
-        product.quantity = quantity
+    savedProducts.forEach(p => {
+      if (p._id === product._id && p.format === product.format) {
+        p.quantity = quantity
       } 
     })
     this.basketService.updateProducts(savedProducts)

@@ -1,10 +1,18 @@
 <pb-page-layout color="black">
   <ng-container page>
-    <div class="illustrations">
+    <div fxLayout="column" fxLayoutAlign="start center" class="illustrations">
 
       <h1>{{'ILLUSTRATIONS.TITLE' | translate}}</h1>
 
       <pb-items-container [items]="illustrations$ | async"></pb-items-container>
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <pb-generic-button
+          *ngIf="(maxIllustrations$ | async) > (illustrationsParams$ | async)?.perPage"
+          [label]="'SHARED.GENERIC_BUTTON.SEE_MORE' | translate"
+          (click)="loadMoreProduct()"
+        ></pb-generic-button>
+      </div>
 
       <pb-newsletter></pb-newsletter>
       <pb-footer></pb-footer>

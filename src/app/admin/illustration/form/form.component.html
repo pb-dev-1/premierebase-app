@@ -8,12 +8,12 @@
       <div fxLayout="row wrap">
         <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
           <mat-label translate>ADMIN.ILLUSTRATION.FORM.LABEL</mat-label>
-          <input matInput formControlName="label">
+          <input matInput formControlName="label" required>
         </mat-form-field>
 
         <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
           <mat-label translate>ADMIN.ILLUSTRATION.FORM.STOCK</mat-label>
-          <input matInput formControlName="stock">
+          <input matInput formControlName="stock" required>
         </mat-form-field>
       </div>
 
@@ -21,6 +21,7 @@
         <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
           <mat-label translate>ADMIN.ILLUSTRATION.FORM.THEME</mat-label>
           <mat-select formControlName="theme">
+            <mat-option [value]="null"></mat-option>
             <mat-option *ngFor="let theme of themes$ | async" [value]="theme._id">
               {{theme.label}}
             </mat-option>
@@ -29,7 +30,7 @@
 
         <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
           <mat-label translate>ADMIN.ILLUSTRATION.FORM.CATEGORY</mat-label>
-          <mat-select formControlName="category">
+          <mat-select formControlName="category" required>
             <mat-option *ngFor="let category of categories$ | async" [value]="category._id">
               {{category.label}}
             </mat-option>
@@ -42,11 +43,11 @@
           <ng-container [formGroupName]="i">
             <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
               <mat-label translate>ADMIN.ILLUSTRATION.FORM.PRICE</mat-label>
-              <input matInput formControlName="price">
+              <input matInput formControlName="price" required>
             </mat-form-field>
             <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
               <mat-label translate>ADMIN.ILLUSTRATION.FORM.FORMAT</mat-label>
-              <mat-select formControlName="format">
+              <mat-select formControlName="format" required>
                 <mat-option *ngFor="let format of formats$ | async" [value]="format._id">
                   {{format.label}}
                 </mat-option>
@@ -72,12 +73,13 @@
 
       <mat-form-field appearance="standard">
         <mat-label translate>ADMIN.ILLUSTRATION.FORM.DETAILS</mat-label>
-        <textarea matInput formControlName="details"></textarea>
+        <textarea matInput formControlName="details" required></textarea>
       </mat-form-field>
 
       <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
         <mat-label translate>ADMIN.ILLUSTRATION.FORM.COLLECTION</mat-label>
         <mat-select formControlName="collec">
+          <mat-option [value]="null"></mat-option>
           <mat-option *ngFor="let collection of collections$ | async" [value]="collection._id">
             {{collection.label}}
           </mat-option>
@@ -125,7 +127,8 @@
                   mat-mini-fab
                   color="warn"
                   aria-label="delete image"
-                  (click)="onDeleteDetail(illustration, detail)"
+                  type="button"
+                  (click)="onDeleteDetail(illustration, detail, true)"
                 ><mat-icon>close</mat-icon></button>
                 <img
                   *ngIf="detail"
@@ -141,7 +144,8 @@
                   mat-mini-fab
                   color="warn"
                   aria-label="delete image"
-                  (click)="onDeleteDetail(illustration, file)"
+                  type="button"
+                  (click)="onDeleteDetail(illustration, file, false)"
                 ><mat-icon>close</mat-icon></button>
                 <img
                   *ngIf="file"

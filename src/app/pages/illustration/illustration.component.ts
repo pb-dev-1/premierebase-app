@@ -37,7 +37,6 @@ export class IllustrationComponent implements OnInit {
   ngOnInit() {
     this.illustration$.subscribe(illustration => {
       this.illustration = illustration
-
       this.selectedImage = this.illustration.images.packShot
       this.selectedFormat = this.illustration.formats[0].format
     })

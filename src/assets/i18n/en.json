@@ -13,13 +13,13 @@
         "EDIT": "Edit",
         "FORMAT": "Format",
         "LABEL": "Label",
-        "PACKSHOT": "Packshot",
+        "PACKSHOT": "Packshot *",
         "PRICE": "Price",
         "RESET_FORMAT": "Reset formats",
         "STOCK": "Stock",
         "SELECT_IMAGE": "Select image",
         "SELECT_IMAGES": "Select images",
-        "SETTING_SCENE": "Setting scene",
+        "SETTING_SCENE": "Setting scene *",
         "THEME": "Theme"
       },
       "LIST": {
@@ -148,7 +148,7 @@
   },
   "COLLECTIONS": {
     "TITLE": "Collections",
-    "COLLECTION_LINK": "Discover collection"
+    "COLLECTION_LINK": "Discover the collections"
   },
   "COLLECTION": {
     "PRODUCTS": "Collection's products"
@@ -166,10 +166,10 @@
     "TITLE": "Première Base"
   },
   "HOME": {
-    "COLLECTIONS_TITLE": "Our collections",
-    "COLLECTIONS_LINK": "Discover our collections",
-    "ILLUSTRATION_TITLE": "Our illustrations",
-    "NEWEST_TITLE": "Our news",
+    "COLLECTIONS_TITLE": "Collections",
+    "COLLECTIONS_LINK": "Discover collections",
+    "ILLUSTRATION_TITLE": "Products",
+    "NEWEST_TITLE": "News",
     "STUDIO_TITLE": "The Studio",
     "STUDIO": {
       "SECTION_1": "Customised illustration",
@@ -180,7 +180,7 @@
       "DESCRIPTION_3": "Visual merchandising, scenography, in-store events, large-format printing, we dress up your spaces and make your points of sale more dynamic"
     },
     "COLLECTION_TITLE": "Blue Garage x Premiere Base",
-    "COLLECTION_LINK": "Discover collaboration"
+    "COLLECTION_LINK": "Discover the collab"
   },
   "ILLUSTRATIONS": {
     "TITLE": "Illustrations"
@@ -242,8 +242,9 @@
       "EMAIL": "Not a valid email"
     },
     "GENERIC_BUTTON": {
-      "DISCOVER_STUDIO": "Discover studio",
-      "MORE_PRODUCT": "Show more product",
+      "DISCOVER_STUDIO": "Visit the Studio",
+      "MORE_PRODUCT": "Shop",
+      "SEE_MORE": "See more",
       "SEND": "Send",
       "SPOTIFY": "The best Spotify playlists",
       "VALIDATE": "Validate"

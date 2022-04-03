@@ -6,7 +6,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader'
 import {FlexLayoutModule} from '@angular/flex-layout'
 import {RouterModule} from '@angular/router'
 import {NgxMasonryModule} from 'ngx-masonry'
-import {NgxFlagPickerModule} from 'ngx-flag-picker'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import {HttpErrorComponent} from '@resources/http-error/http-error.component'
@@ -74,7 +73,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     FlexLayoutModule,
     RouterModule,
     NgxMasonryModule,
-    NgxFlagPickerModule,
     FormsModule,
     ReactiveFormsModule,
   ],
@@ -97,6 +95,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginFormComponent,
     ClickOutsideDirective,
     QuantitySelectorComponent,
+    NgxMasonryModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    TranslateModule,
   ]
 })
 export class SharedModule { }

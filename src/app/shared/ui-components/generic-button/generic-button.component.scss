@@ -4,9 +4,16 @@
   padding: 7px 45px;
   border-radius: 0;
   font-family: Fixture-Expanded-Regular, "Helvetica Neue", sans-serif;
+  height: 50px;
 
   &.primary {
     background-color: $pb-black;
     color: $pb-white;
+
+    &:hover {
+      background-color: $pb-white;
+      color: $pb-black;
+      border: solid 1px $pb-black;
+    }
   }
 }

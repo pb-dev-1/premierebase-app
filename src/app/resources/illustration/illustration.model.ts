@@ -2,6 +2,13 @@ import {Theme} from '@resources/theme/theme.model'
 import {Category} from '@resources/category/category.model'
 import {Collection} from '@resources/collection/collection.model'
 
+
+export interface IllustrationParams {
+  sortkey?: string
+  sortOrder?: string
+  perPage?: string
+}
+
 export interface Illustration {
   _id: string
   label: string

@@ -1,11 +1,6 @@
 import {NgModule} from '@angular/core'
 import {CommonModule} from '@angular/common'
-import {TranslateModule} from '@ngx-translate/core'
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-import {FlexLayoutModule} from '@angular/flex-layout'
-import {NgxMasonryModule} from 'ngx-masonry'
 
-import {MaterialModule} from '@resources/material.module'
 import {SharedModule} from '@shared/shared.module'
 import {PagesRoutingModule} from './pages-routing.module'
 import {JournalComponent} from './journal/journal.component'
@@ -35,13 +30,7 @@ import {CollectionComponent} from './collection/collection.component'
   imports: [
     CommonModule,
     PagesRoutingModule,
-    TranslateModule,
     SharedModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-    NgxMasonryModule,
   ]
 })
 export class PagesModule {

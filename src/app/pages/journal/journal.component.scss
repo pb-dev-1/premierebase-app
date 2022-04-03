@@ -26,6 +26,17 @@
         }
       }
     }
-    
+  }
+
+
+  @media(max-width: 768px) {
+    .journal {
+      padding: 100px 0 0;
+      .mansory-list {
+        .masonry-item {
+          width: 100%;
+        }
+      }
+    }
   }
 }

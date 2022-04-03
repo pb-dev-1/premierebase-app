@@ -3,13 +3,17 @@
   background: url('../../../../assets/images/backgrounds/footer/footer-bg.png') no-repeat center center;
   background-size: cover;
   overflow: hidden;
+
+  img {
+    width: 150px;
+  }
 }
 
 .footer-left {
 
   .footer-title {
-    font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
-    font-size: 50px;
+    font-family: Fixture-Expanded-Bold, "Helvetica Neue", sans-serif;
+    font-size: 52px;
     margin: 0 0 15px;
   }
 
@@ -23,6 +27,8 @@
     font-family: Fixture-Expanded-Light, "Helvetica Neue", sans-serif;
     font-size: 14px;
     text-align: left;
+    max-width: 260px;
+    line-height: 22px;
   }
 
   .footer-menu {
@@ -49,9 +55,12 @@
 }
 
 @media(min-width: 992px) {
+  .footer-right {
+    width: 570px;
+  }
   .footer-left {
-    padding: 0 55px;
-    max-width: 570px;
+    padding: 0 50px 0 80px;
+    max-width: 630px;
   }
 }
 

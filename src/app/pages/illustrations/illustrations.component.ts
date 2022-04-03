@@ -1,9 +1,9 @@
 import {Component} from '@angular/core'
-import {Observable} from 'rxjs'
-import {tap} from 'rxjs/operators'
+import {BehaviorSubject, Observable} from 'rxjs'
+import {switchMap, tap} from 'rxjs/operators'
 
 import {IllustrationService} from '@resources/illustration/illustration.service'
-import {Illustration} from '@resources/illustration/illustration.model'
+import {Illustration, IllustrationParams} from '@resources/illustration/illustration.model'
 
 @Component({
   selector: 'pb-illustrations',
@@ -11,16 +11,21 @@ import {Illustration} from '@resources/illustration/illustration.model'
   styleUrls: ['./illustrations.component.scss']
 })
 export class IllustrationsComponent {
-  illustrations$: Observable<Illustration[]> = this.illustrationService.illustrations$.pipe(
-    tap(illustrations => {
-      if (!illustrations) {
-        this.illustrationService.getIllustrations()
-      }
-    })
+  defaultPerPage = '15'
+  illustrationsParams$: BehaviorSubject<IllustrationParams> = new BehaviorSubject({perPage: this.defaultPerPage})
+  maxIllustrations$: Observable<number> = this.illustrationService.maxItems$
+  illustrations$: Observable<Illustration[]> = this.illustrationsParams$.pipe(
+    tap(params => this.illustrationService.getIllustrations(params)),
+    switchMap(() => this.illustrationService.illustrations$),
   )
 
   constructor(
     private illustrationService: IllustrationService,
   ) { }
+
+  loadMoreProduct() {
+    const perPage = (parseInt(this.illustrationsParams$.getValue().perPage) + parseInt(this.defaultPerPage)).toString()
+    this.illustrationsParams$.next({'perPage': perPage})
+  }
 
 }

@@ -8,6 +8,17 @@
     img {
       width: 160px;
       margin-bottom: 35px;
+      animation: rotation 10s infinite linear;
+      cursor: pointer;
     }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }

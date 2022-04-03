@@ -47,7 +47,7 @@
                 [maxQuantity]="element.stock"
                 [inline]="true"
                 size="sm"
-                (changeQuantity)="onChangeQuantity($event, element._id)"
+                (changeQuantity)="onChangeQuantity($event, element)"
               ></pb-quantity-selector>
             </mat-cell>
           </ng-container>
@@ -55,7 +55,7 @@
           <ng-container matColumnDef="total">
             <mat-header-cell *matHeaderCellDef translate></mat-header-cell>
             <mat-cell *matCellDef="let element">
-              {{element.format.price * element.quantity}}
+              {{element.format.price * element.quantity | currency:'EUR'}}
             </mat-cell>
           </ng-container>
       
@@ -105,15 +105,16 @@
         >
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="30px">
             <span>{{'BASKET.TOTAL_WD' | translate}}</span>
-            <span>{{total}}</span>
+            <span>{{total | currency:'EUR'}}</span>
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="30px">
             <span>{{'BASKET.DELIVERY' | translate}}</span>
-            <span>{{'BASKET.GIFTED' | translate}}</span>
+            <span *ngIf="total >= 200">{{'BASKET.GIFTED' | translate}}</span>
+            <span *ngIf="total < 200">{{delivery | currency:'EUR'}}</span>
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="30px">
             <span>{{'BASKET.TOTAL' | translate}}</span>
-            <span>{{total}}</span>
+            <span>{{total + delivery | currency:'EUR'}}</span>
           </div>
         </div>
       </div>
