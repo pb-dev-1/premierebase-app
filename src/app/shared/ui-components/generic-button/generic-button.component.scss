@@ -9,11 +9,11 @@
   &.primary {
     background-color: $pb-black;
     color: $pb-white;
+    border: solid 1px $pb-black;
 
     &:hover {
       background-color: $pb-white;
       color: $pb-black;
-      border: solid 1px $pb-black;
     }
   }
 }
