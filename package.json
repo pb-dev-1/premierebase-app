@@ -34,6 +34,7 @@
     "flag-icon-css": "^3.5.0",
     "masonry-layout": "^4.2.2",
     "moment": "^2.27.0",
+    "ngx-image-zoom": "^1.0.0-beta.0",
     "ngx-masonry": "^13.0.0",
     "npm": "^7.21.0",
     "path": "^0.12.7",

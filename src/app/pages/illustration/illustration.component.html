@@ -28,7 +28,10 @@
             </ng-container>
           </div>
           <div class="image-container">
-            <img [src]="env.uploads + this.selectedImage">
+            <lib-ngx-image-zoom
+              [thumbImage]="env.uploads + this.selectedImage"
+              zoomMode="hover"
+            ></lib-ngx-image-zoom>
           </div>
         </div>
 

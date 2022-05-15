@@ -17,8 +17,12 @@
     .image-container {
       max-width: 350px;
 
-      img {
-        width: 100%;
+      lib-ngx-image-zoom {
+        ::ng-deep {
+          img {
+            width: 350px;
+          }
+        }
       }
     }
 

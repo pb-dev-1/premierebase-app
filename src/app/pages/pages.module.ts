@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core'
 import {CommonModule} from '@angular/common'
+import {NgxImageZoomModule} from 'ngx-image-zoom'
 
 import {SharedModule} from '@shared/shared.module'
 import {PagesRoutingModule} from './pages-routing.module'
@@ -31,6 +32,7 @@ import {CollectionComponent} from './collection/collection.component'
     CommonModule,
     PagesRoutingModule,
     SharedModule,
+    NgxImageZoomModule,
   ]
 })
 export class PagesModule {
