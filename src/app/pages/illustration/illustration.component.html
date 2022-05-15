@@ -29,7 +29,8 @@
           </div>
           <div class="image-container">
             <lib-ngx-image-zoom
-              [thumbImage]="env.uploads + this.selectedImage"
+              [thumbImage]="imageDisplayed"
+              [fullImage]="imageDisplayed"
               zoomMode="hover"
             ></lib-ngx-image-zoom>
           </div>

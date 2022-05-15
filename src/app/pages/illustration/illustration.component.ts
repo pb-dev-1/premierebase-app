@@ -28,6 +28,10 @@ export class IllustrationComponent implements OnInit {
     fitWidth: true,
   }
 
+  get imageDisplayed() {
+    return this.env.uploads + this.selectedImage
+  }
+
   constructor(
     private illustrationService: IllustrationService,
     private route: ActivatedRoute,
@@ -44,6 +48,7 @@ export class IllustrationComponent implements OnInit {
 
   selectImage(img: string) {
     this.selectedImage = img
+    console.log(this.selectedImage)
   }
 
   onChangeQuantity(quantity: number) {
