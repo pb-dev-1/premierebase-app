@@ -1,5 +1,5 @@
 <div class="nav-bar">
-  <a routerLink="/">
+  <a routerLink="/admin/illustrations">
     <img class="logo" src="assets/images/logos/logo-2.png">
   </a>
 
@@ -28,8 +28,6 @@
          [class.active]="route === 'themes'"
          (click)="navigate('admin/themes')"
     >{{'NAV.TOP.THEME' | translate}}</div>
-
-
   </div>
 
   <div fxHide.gt-sm>
