@@ -18,7 +18,7 @@ export class BasketComponent {
 
   constructor(private basketService: BasketService) { }
 
-  get total() {
+  get totalHT() {
     let t = 0
     const savedProducts = this.savedProducts$.getValue()
     if (!savedProducts?.length) return 0
@@ -28,6 +28,14 @@ export class BasketComponent {
 
   get delivery() {
     return 5
+  }
+
+  get total() {
+    let t = this.totalHT
+    if (t < 200) {
+      t += this.delivery
+    }
+    return t
   }
 
   onChangeQuantity(quantity: number, product: BasketItem) {

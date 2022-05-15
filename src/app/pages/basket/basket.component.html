@@ -105,16 +105,16 @@
         >
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="30px">
             <span>{{'BASKET.TOTAL_WD' | translate}}</span>
-            <span>{{total | currency:'EUR'}}</span>
+            <span>{{totalHT | currency:'EUR'}}</span>
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="30px">
             <span>{{'BASKET.DELIVERY' | translate}}</span>
-            <span *ngIf="total >= 200">{{'BASKET.GIFTED' | translate}}</span>
-            <span *ngIf="total < 200">{{delivery | currency:'EUR'}}</span>
+            <span *ngIf="totalHT >= 200">{{'BASKET.GIFTED' | translate}}</span>
+            <span *ngIf="totalHT < 200">{{delivery | currency:'EUR'}}</span>
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="30px">
             <span>{{'BASKET.TOTAL' | translate}}</span>
-            <span>{{total + delivery | currency:'EUR'}}</span>
+            <span>{{total | currency:'EUR'}}</span>
           </div>
         </div>
       </div>
