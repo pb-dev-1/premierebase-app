@@ -19,7 +19,7 @@
       <pb-items-container [items]="(collection$ | async)?.products"></pb-items-container>
     </div>
 
-    <pb-newsletter></pb-newsletter>
+    <pb-newsletter *ngIf="(alreadySub$ | async) !== 'true'"></pb-newsletter>
     <pb-footer></pb-footer>
   </ng-container>
 </pb-page-layout>

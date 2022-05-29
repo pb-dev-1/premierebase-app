@@ -8,6 +8,7 @@ import {IllustrationService} from '@resources/illustration/illustration.service'
 import {CollectionService} from '@resources/collection/collection.service'
 import {Collection} from '@resources/collection/collection.model'
 import {environment} from '@env/environment'
+import {NewsletterService} from '@app/resources/newsletter/newsletter.service'
 
 @Component({
   selector: 'pb-home',
@@ -16,6 +17,7 @@ import {environment} from '@env/environment'
 })
 export class HomeComponent {
   env = environment
+  alreadySub$ = this.newsletterService.alreadySub$
 
   newestItems$: Observable<Illustration[]> =  this.illustrationService.newestIllustrations$.pipe(
     tap(illustrations => {
@@ -43,6 +45,7 @@ export class HomeComponent {
     private illustrationService: IllustrationService,
     private collectionService: CollectionService,
     private router: Router,
+    private newsletterService: NewsletterService,
   ) { }
   
   public async goToCollection(collectionId: string) {

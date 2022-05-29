@@ -1,3 +1,8 @@
-<button mat-button class="generic-btn {{color}}" [disabled]="disabled">
+<button
+  mat-button
+  class="generic-btn {{color}}"
+  [disabled]="disabled"
+  (click)="this.pbClick.emit()"
+>
   {{label}}
 </button>

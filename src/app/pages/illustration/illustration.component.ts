@@ -8,6 +8,7 @@ import {Illustration} from '@resources/illustration/illustration.model'
 import {IllustrationService} from '@resources/illustration/illustration.service'
 import {BasketService} from '@app/resources/basket/basket.service'
 import {environment} from '@env/environment'
+import {NewsletterService} from '@app/resources/newsletter/newsletter.service'
 
 @Component({
   selector: 'pb-illustration',
@@ -23,6 +24,7 @@ export class IllustrationComponent implements OnInit {
   selectedImage: string
   selectedQuantity: number = 1
   env = environment
+  alreadySub$ = this.newsletterService.alreadySub$
   masonryOptions: NgxMasonryOptions = {
     gutter: 50,
     fitWidth: true,
@@ -36,6 +38,7 @@ export class IllustrationComponent implements OnInit {
     private illustrationService: IllustrationService,
     private route: ActivatedRoute,
     private basketService: BasketService,
+    private newsletterService: NewsletterService,
   ) { }
 
   ngOnInit() {

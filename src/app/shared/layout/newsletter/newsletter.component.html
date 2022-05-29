@@ -1,10 +1,24 @@
 <div fxLayout="column" fxLayoutAlign="center center" class="newsletter">
   <h2 class="section-title">{{'NEWSLETTER.STAY_CONNECTED' | translate}}</h2>
-  <form fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center">
+  <form
+    *ngIf="!alreadySub"
+    fxLayout="column"
+    fxLayout.gt-sm="row"
+    fxLayoutAlign="center center"
+    [formGroup]="form"
+  >
     <mat-form-field appearance="standard">
       <mat-label>Email</mat-label>
-      <input matInput>
+      <input matInput formControlName="email" required>
+      <mat-error *ngIf="form.controls.email.errors?.email">{{'SHARED.FORM_ERROR.EMAIL' | translate}}</mat-error>
+      <mat-error *ngIf="form.controls.email.errors?.required">{{'SHARED.FORM_ERROR.REQUIRED' | translate}}</mat-error>
     </mat-form-field>
-    <pb-generic-button [label]="'SHARED.GENERIC_BUTTON.SEND' | translate"></pb-generic-button>
+    <pb-generic-button
+      [label]="'SHARED.GENERIC_BUTTON.SEND' | translate"
+      [disabled]="form.invalid"
+      (pbClick)="subscribe()"
+    ></pb-generic-button>
   </form>
+
+  <p *ngIf="alreadySub">{{'NEWSLETTER.CHECK_YOUR_INBOX' | translate}}</p>
 </div>

@@ -1,19 +1,21 @@
-import {Component, OnInit, ViewChild} from '@angular/core'
+import {Component, ViewChild} from '@angular/core'
 import {NgxMasonryComponent, NgxMasonryOptions} from 'ngx-masonry'
+
+import {NewsletterService} from '@app/resources/newsletter/newsletter.service'
 
 @Component({
   selector: 'pb-journal',
   templateUrl: './journal.component.html',
   styleUrls: ['./journal.component.scss']
 })
-export class JournalComponent implements OnInit {
+export class JournalComponent {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent
 
+  alreadySub$ = this.newsletterService.alreadySub$
   masonryOptions: NgxMasonryOptions = {
     gutter: 50,
     fitWidth: true,
   }
-
   masonryImages = [
     'assets/images/journal/9.png',
     'assets/images/journal/8.png',
@@ -37,9 +39,6 @@ export class JournalComponent implements OnInit {
     'assets/images/journal/24.png',
   ]
 
-
-  constructor() { }
-
-  ngOnInit(): void { }
+  constructor(private newsletterService: NewsletterService) { }
 
 }

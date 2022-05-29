@@ -1,82 +1,87 @@
-.footer-right {
-  width: 100%;
-  background-size: cover;
-  overflow: hidden;
+:host {
+  .footer {
+    margin-top: 50px;
 
-  img {
-    width: 150px;
-  }
-}
-
-.footer-left {
-
-  .footer-title {
-    font-family: Fixture-Expanded-Bold, "Helvetica Neue", sans-serif;
-    font-size: 52px;
-    margin: 0 0 15px;
-  }
-
-  .footer-socials {
-    font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
-    font-size: 15px;
-    margin-bottom: 40px;
-  }
-
-  .footer-description {
-    font-family: Fixture-Expanded-Light, "Helvetica Neue", sans-serif;
-    font-size: 14px;
-    text-align: left;
-    max-width: 260px;
-    line-height: 22px;
-  }
-
-  .footer-menu {
-    font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: left;
-
-    li {
-      margin-bottom: 15px;
+    .footer-right {
+      width: 100%;
+      background-size: cover;
+      overflow: hidden;
+    
+      img {
+        width: 150px;
+      }
     }
-  }
-
-  .footer-links {
-    font-size: 9px;
-    margin-bottom: 20px;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-}
-
-@media(min-width: 992px) {
-  .footer-right {
-    width: 570px;
-  }
-  .footer-left {
-    padding: 0 50px 0 80px;
-    max-width: 630px;
-  }
-}
-
-@media(max-width: 992px) {
-  .footer-left {
-    padding: 0 15px;
-
-    .footer-title,
-    .footer-socials,
-    .footer-description,
-    .footer-menu,
-    .footer-links {
-      text-align: center;
+    
+    .footer-left {
+      .footer-title {
+        font-family: Fixture-Expanded-Bold, "Helvetica Neue", sans-serif;
+        font-size: 52px;
+        margin: 0 0 15px;
+      }
+    
+      .footer-socials {
+        font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
+        font-size: 15px;
+        margin-bottom: 40px;
+      }
+    
+      .footer-description {
+        font-family: Fixture-Expanded-Light, "Helvetica Neue", sans-serif;
+        font-size: 14px;
+        text-align: left;
+        max-width: 260px;
+        line-height: 22px;
+      }
+    
+      .footer-menu {
+        font-family: Fixture-Expanded-SemiBold, "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: left;
+    
+        li {
+          margin-bottom: 15px;
+        }
+      }
+    
+      .footer-links {
+        font-size: 9px;
+        margin-bottom: 20px;
+      }
+    
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
     }
-  }
-
-  .footer-right {
-    min-height: 500px;
+    
+    @media(min-width: 992px) {
+      .footer-right {
+        width: 570px;
+      }
+      .footer-left {
+        padding: 0 50px 0 80px;
+        max-width: 630px;
+      }
+    }
+    
+    @media(max-width: 992px) {
+      .footer-left {
+        padding: 0 15px;
+    
+        .footer-title,
+        .footer-socials,
+        .footer-description,
+        .footer-menu,
+        .footer-links {
+          text-align: center;
+        }
+      }
+    
+      .footer-right {
+        min-height: 500px;
+      }
+    }
   }
 }

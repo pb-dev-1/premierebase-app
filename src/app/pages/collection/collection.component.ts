@@ -7,6 +7,7 @@ import {NgxMasonryComponent, NgxMasonryOptions} from 'ngx-masonry'
 import {Collection} from '@resources/collection/collection.model'
 import {CollectionService} from '@resources/collection/collection.service'
 import {environment} from '@env/environment'
+import {NewsletterService} from '@app/resources/newsletter/newsletter.service'
 
 @Component({
   selector: 'pb-collection',
@@ -20,6 +21,7 @@ export class CollectionComponent {
   collection$: Observable<Collection> = this.collectionId$.pipe(switchMap(id => this.collectionService.getCollection(id)))
 
   env = environment
+  alreadySub$ = this.newsletterService.alreadySub$
 
   masonryOptions: NgxMasonryOptions = {
     gutter: 50,
@@ -29,6 +31,7 @@ export class CollectionComponent {
   constructor(
     private collectionService: CollectionService,
     private route: ActivatedRoute,
+    private newsletterService: NewsletterService,
   ) { }
 
 }

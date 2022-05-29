@@ -58,7 +58,7 @@
           <p class="price">{{getPrice()}}</p>
           <pb-generic-button
             [label]="'ILLUSTRATION.ORDER' | translate"
-            (click)="addToCart()"
+            (pbClick)="addToCart()"
           ></pb-generic-button>
         </div>
       </div>
@@ -101,7 +101,7 @@
     
     </div>
 
-    <pb-newsletter></pb-newsletter>
+    <pb-newsletter *ngIf="(alreadySub$ | async) !== 'true'"></pb-newsletter>
     <pb-footer></pb-footer>
   </ng-container>
 </pb-page-layout>

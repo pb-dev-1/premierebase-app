@@ -234,7 +234,8 @@
     }
   },
   "NEWSLETTER": {
-    "STAY_CONNECTED": "Restez connecté"
+    "STAY_CONNECTED": "Restez connecté",
+    "CHECK_YOUR_INBOX": "Checkez votre boite mail, vous avez reçu un petit cadeau"
   },
   "SIGNUP": {
     "TITLE": "M'inscrire",

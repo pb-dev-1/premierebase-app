@@ -4,6 +4,7 @@ import {switchMap, tap} from 'rxjs/operators'
 
 import {IllustrationService} from '@resources/illustration/illustration.service'
 import {Illustration, IllustrationParams} from '@resources/illustration/illustration.model'
+import {NewsletterService} from '@app/resources/newsletter/newsletter.service'
 
 @Component({
   selector: 'pb-illustrations',
@@ -12,6 +13,8 @@ import {Illustration, IllustrationParams} from '@resources/illustration/illustra
 })
 export class IllustrationsComponent {
   defaultPerPage = '15'
+  alreadySub$ = this.newsletterService.alreadySub$
+
   illustrationsParams$: BehaviorSubject<IllustrationParams> = new BehaviorSubject({perPage: this.defaultPerPage})
   maxIllustrations$: Observable<number> = this.illustrationService.maxItems$
   illustrations$: Observable<Illustration[]> = this.illustrationsParams$.pipe(
@@ -21,6 +24,7 @@ export class IllustrationsComponent {
 
   constructor(
     private illustrationService: IllustrationService,
+    private newsletterService: NewsletterService,
   ) { }
 
   loadMoreProduct() {

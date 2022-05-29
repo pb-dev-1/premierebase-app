@@ -5,6 +5,7 @@ import {tap} from 'rxjs/operators'
 import {Collection} from '@resources/collection/collection.model'
 import {CollectionService} from '@resources/collection/collection.service'
 import {environment} from '@env/environment'
+import {NewsletterService} from '@app/resources/newsletter/newsletter.service'
 
 @Component({
   selector: 'pb-collections',
@@ -13,6 +14,7 @@ import {environment} from '@env/environment'
 })
 export class CollectionsComponent {
   env = environment
+  alreadySub$ = this.newsletterService.alreadySub$
   
   collections$: Observable<Collection[]> = this.collectionService.collections$.pipe(
     tap(illustrations => {
@@ -24,6 +26,7 @@ export class CollectionsComponent {
 
   constructor(
     private collectionService: CollectionService,
+    private newsletterService: NewsletterService,
   ) { }
 
 }
