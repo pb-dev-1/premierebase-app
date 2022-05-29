@@ -4,34 +4,45 @@
   </a>
 
   <div class="nav-bar-links" fxHide.lt-md [ngStyle]="{'color': color}">
-    <div class="nav-bar-link"
-         [class.active]="route === 'illustrations'"
-         (click)="navigate('admin/illustrations')"
+    <div
+      class="nav-bar-link"
+      [class.active]="route === 'illustrations'"
+      (click)="navigate('admin/illustrations')"
     >{{'NAV.TOP.ILLUSTRATION' | translate}}</div>
 
-    <div class="nav-bar-link"
-         [class.active]="route === 'collections'"
-         (click)="navigate('admin/collections')"
+    <div
+      class="nav-bar-link"
+      [class.active]="route === 'collections'"
+      (click)="navigate('admin/collections')"
     >{{'NAV.TOP.COLLECTION' | translate}}</div>
 
-    <div class="nav-bar-link"
-         [class.active]="route === 'categories'"
-         (click)="navigate('admin/categories')"
+    <div
+      class="nav-bar-link"
+      [class.active]="route === 'categories'"
+      (click)="navigate('admin/categories')"
     >{{'NAV.TOP.CATEGORY' | translate}}</div>
 
-    <div class="nav-bar-link"
-         [class.active]="route === 'formats'"
-         (click)="navigate('admin/formats')"
+    <div
+      class="nav-bar-link"
+      [class.active]="route === 'formats'"
+      (click)="navigate('admin/formats')"
     >{{'NAV.TOP.FORMAT' | translate}}</div>
 
-    <div class="nav-bar-link"
-         [class.active]="route === 'themes'"
-         (click)="navigate('admin/themes')"
+    <div
+      class="nav-bar-link"
+      [class.active]="route === 'themes'"
+      (click)="navigate('admin/themes')"
     >{{'NAV.TOP.THEME' | translate}}</div>
+
+    <div
+      class="nav-bar-link"
+      [class.active]="route === 'newsletter'"
+      (click)="navigate('admin/newsletter')"
+    >{{'NAV.TOP.NEWSLETTER' | translate}}</div>
   </div>
 
   <div fxHide.gt-sm>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">

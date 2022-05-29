@@ -1,42 +1,5 @@
 {
   "ADMIN": {
-    "ILLUSTRATION": {
-      "EDIT": {
-        "TITLE": "Edit illustration"
-      },
-      "FORM": {
-        "ADD_FORMAT": "add new format",
-        "CATEGORY": "Category",
-        "COLLECTION": "Collection",
-        "CREATE": "Create",
-        "DETAILS": "Details",
-        "EDIT": "Edit",
-        "FORMAT": "Format",
-        "LABEL": "Label",
-        "PACKSHOT": "Packshot *",
-        "PRICE": "Price",
-        "RESET_FORMAT": "Reset formats",
-        "STOCK": "Stock",
-        "SELECT_IMAGE": "Select image",
-        "SELECT_IMAGES": "Select images",
-        "SETTING_SCENE": "Setting scene *",
-        "THEME": "Theme"
-      },
-      "LIST": {
-        "CATEGORY": "Category",
-        "CREATE": "Create illustration",
-        "COLLECTION": "Collection",
-        "DETAILS": "Details",
-        "LABEL": "Label",
-        "PACKSHOT": "Packshot",
-        "STOCK": "Stock",
-        "THEME": "Theme",
-        "TITLE": "Illustrations"
-      },
-      "NEW": {
-        "TITLE": "New illustration"
-      }
-    },
     "CATEGORY": {
       "EDIT": {
         "TITLE": "Edit category"
@@ -99,6 +62,49 @@
       },
       "NEW": {
         "TITLE": "New format"
+      }
+    },
+    "ILLUSTRATION": {
+      "EDIT": {
+        "TITLE": "Edit illustration"
+      },
+      "FORM": {
+        "ADD_FORMAT": "add new format",
+        "CATEGORY": "Category",
+        "COLLECTION": "Collection",
+        "CREATE": "Create",
+        "DETAILS": "Details",
+        "EDIT": "Edit",
+        "FORMAT": "Format",
+        "LABEL": "Label",
+        "PACKSHOT": "Packshot *",
+        "PRICE": "Price",
+        "RESET_FORMAT": "Reset formats",
+        "STOCK": "Stock",
+        "SELECT_IMAGE": "Select image",
+        "SELECT_IMAGES": "Select images",
+        "SETTING_SCENE": "Setting scene *",
+        "THEME": "Theme"
+      },
+      "LIST": {
+        "CATEGORY": "Category",
+        "CREATE": "Create illustration",
+        "COLLECTION": "Collection",
+        "DETAILS": "Details",
+        "LABEL": "Label",
+        "PACKSHOT": "Packshot",
+        "STOCK": "Stock",
+        "THEME": "Theme",
+        "TITLE": "Illustrations"
+      },
+      "NEW": {
+        "TITLE": "New illustration"
+      }
+    },
+    "NEWSLETTER": {
+      "LIST": {
+        "EMAIL": "Email",
+        "TITLE": "Newsletter"
       }
     },
     "THEME": {
@@ -209,16 +215,22 @@
       "COLLECTIONS": "Collections",
       "SHOP": "Shop",
       "BRAND": "The brand",
-      "STUDIO": "Journal",
+      "STUDIO": "Studio",
       "JOURNAL": "Journal",
       "CONTACT": "Contact"
     },
     "TOP": {
-      "ACCOUNT": "My account",
-      "SIGNUP": "Sign up",
+      "BASKET": "Basket",
+      "CATEGORY": "Categories",
+      "COLLECTION": "Collections",
+      "FORMAT": "Formats",
+      "ILLUSTRATION": "Illustrations",
       "LOGIN": "Sign in",
       "LOGOUT": "Logout",
-      "BASKET": "Basket"
+      "NEWSLETTER": "Newsletter",
+      "ACCOUNT": "My account",
+      "SIGNUP": "Sign up",
+      "THEME": "Themes"
     }
   },
   "NEWSLETTER": {

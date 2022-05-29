@@ -1,42 +1,5 @@
 {
   "ADMIN": {
-    "ILLUSTRATION": {
-      "EDIT": {
-        "TITLE": "Modifier l'illustration"
-      },
-      "FORM": {
-        "ADD_FORMAT": "Ajouter un format",
-        "CATEGORY": "Catégorie",
-        "COLLECTION": "Collection",
-        "CREATE": "Créer",
-        "DETAILS": "Détails",
-        "EDIT": "Modifier",
-        "FORMAT": "Format",
-        "LABEL": "Label",
-        "PACKSHOT": "Packshot *",
-        "PRICE": "Prix",
-        "RESET_FORMAT": "Réinitialiser les formats",
-        "STOCK": "Stock",
-        "SELECT_IMAGE": "Sélectionner une image",
-        "SELECT_IMAGES": "Sélectionner des images",
-        "SETTING_SCENE": "Mise en scène *",
-        "THEME": "Thème"
-      },
-      "LIST": {
-        "CATEGORY": "Catégorie",
-        "CREATE": "Créer un illustration",
-        "COLLECTION": "Collection",
-        "DETAILS": "Détails",
-        "LABEL": "Label",
-        "PACKSHOT": "Packshot",
-        "STOCK": "Stock",
-        "THEME": "Thème",
-        "TITLE": "Illustrations"
-      },
-      "NEW": {
-        "TITLE": "Nouvel illustration"
-      }
-    },
     "CATEGORY": {
       "EDIT": {
         "TITLE": "Modifier la catégorie"
@@ -99,6 +62,49 @@
       },
       "NEW": {
         "TITLE": "Nouveau format"
+      }
+    },
+    "ILLUSTRATION": {
+      "EDIT": {
+        "TITLE": "Modifier l'illustration"
+      },
+      "FORM": {
+        "ADD_FORMAT": "Ajouter un format",
+        "CATEGORY": "Catégorie",
+        "COLLECTION": "Collection",
+        "CREATE": "Créer",
+        "DETAILS": "Détails",
+        "EDIT": "Modifier",
+        "FORMAT": "Format",
+        "LABEL": "Label",
+        "PACKSHOT": "Packshot *",
+        "PRICE": "Prix",
+        "RESET_FORMAT": "Réinitialiser les formats",
+        "STOCK": "Stock",
+        "SELECT_IMAGE": "Sélectionner une image",
+        "SELECT_IMAGES": "Sélectionner des images",
+        "SETTING_SCENE": "Mise en scène *",
+        "THEME": "Thème"
+      },
+      "LIST": {
+        "CATEGORY": "Catégorie",
+        "CREATE": "Créer un illustration",
+        "COLLECTION": "Collection",
+        "DETAILS": "Détails",
+        "LABEL": "Label",
+        "PACKSHOT": "Packshot",
+        "STOCK": "Stock",
+        "THEME": "Thème",
+        "TITLE": "Illustrations"
+      },
+      "NEW": {
+        "TITLE": "Nouvel illustration"
+      }
+    },
+    "NEWSLETTER": {
+      "LIST": {
+        "EMAIL": "Email",
+        "TITLE": "Newsletter"
       }
     },
     "THEME": {
@@ -215,13 +221,14 @@
     },
     "TOP": {
       "ACCOUNT": "Mon compte",
-      "ILLUSTRATION": "Illustrations",
       "BASKET": "Panier",
       "CATEGORY": "Catégories",
       "COLLECTION": "Collections",
       "FORMAT": "Formats",
+      "ILLUSTRATION": "Illustrations",
       "LOGIN": "Me connecter",
       "LOGOUT": "Me déconnecter",
+      "NEWSLETTER": "Newsletter",
       "SIGNUP": "M'inscrire",
       "THEME": "Thèmes"
     }

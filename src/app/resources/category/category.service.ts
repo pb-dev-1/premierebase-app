@@ -17,7 +17,7 @@ export class CategoryService {
 
   getCategories() {
     return this.http.get(environment.api + '/categories')
-      .subscribe((themes: Category[]) => this.categories$.next(themes))
+      .subscribe((categories: Category[]) => this.categories$.next(categories))
   }
 
   getCategory(id: string): Observable<Category> {
