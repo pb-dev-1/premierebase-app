@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing'
 
-import { ItemsContainerComponent } from './items-container.component';
+import {ItemsContainerComponent} from './items-container.component'
 
 describe('ItemsContainerComponent', () => {
   let component: ItemsContainerComponent;
@@ -10,16 +10,16 @@ describe('ItemsContainerComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ItemsContainerComponent ]
     })
-    .compileComponents();
-  }));
+    .compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemsContainerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(ItemsContainerComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

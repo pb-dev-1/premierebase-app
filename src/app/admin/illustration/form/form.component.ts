@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild} from '@angular/core'
+import {Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core'
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser'
 import {tap} from 'rxjs/operators'
@@ -17,7 +17,7 @@ import {environment} from '@env/environment'
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnChanges {
+export class FormComponent implements OnInit, OnChanges, OnDestroy {
   env = environment
   illustrationForm: FormGroup
   formats: FormArray

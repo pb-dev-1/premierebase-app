@@ -46,7 +46,7 @@
             <button mat-icon-button color="primary" [routerLink]="['/admin/collections/' + element._id + '/edit']">
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button color="warn" (click)="deleteCollection(element._id)">
+            <button mat-icon-button color="warn" (click)="confirm(element._id)">
               <mat-icon>delete</mat-icon>
             </button>
           </div>

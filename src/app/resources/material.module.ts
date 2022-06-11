@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatCardModule} from '@angular/material/card'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatDialogModule} from '@angular/material/dialog'
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     MatSlideToggleModule,
     MatCardModule,
     MatCheckboxModule,
+    MatDialogModule,
   ],
   exports: [
     MatIconModule,
@@ -41,6 +43,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     MatSlideToggleModule,
     MatCardModule,
     MatCheckboxModule,
+    MatDialogModule,
   ],
 })
 export class MaterialModule {}

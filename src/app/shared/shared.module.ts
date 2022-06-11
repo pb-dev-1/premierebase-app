@@ -30,6 +30,7 @@ import {LoginFormComponent} from './layout/authentication-popup/login-form/login
 import {SignupFormComponent} from './layout/authentication-popup/signup-form/signup-form.component'
 import {ClickOutsideDirective} from './directive/click-outside.directive'
 import {QuantitySelectorComponent} from './ui-components/quantity-selector/quantity-selector.component'
+import {ConfirmDialogComponent} from './ui-components/confirm-dialog/confirm-dialog.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http)
@@ -58,6 +59,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SignupFormComponent,
     ClickOutsideDirective,
     QuantitySelectorComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     CommonModule,

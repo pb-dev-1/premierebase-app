@@ -25,7 +25,7 @@
             <button mat-icon-button color="primary" [routerLink]="['/admin/themes/' + element._id + '/edit']">
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button color="warn" (click)="deleteTheme(element._id)">
+            <button mat-icon-button color="warn" (click)="confirm(element._id)">
               <mat-icon>delete</mat-icon>
             </button>
           </div>

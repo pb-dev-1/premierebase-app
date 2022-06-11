@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+  {{data}}
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onPerform(false)">{{'SHARED.GENERIC_BUTTON.NO' | translate}}</button>
+  <button mat-button (click)="onPerform(true)" cdkFocusInitial>{{'SHARED.GENERIC_BUTTON.YES' | translate}}</button>
+</div>

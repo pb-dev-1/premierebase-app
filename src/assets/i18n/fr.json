@@ -248,6 +248,9 @@
     "EMAILING": "Inscrivez-moi pour le mailing"
   },
   "SHARED": {
+    "DIALOG": {
+      "CONFIRM_DELETE": "Etes vous sûr de vouloir supprimer cet élément ?"
+    },
     "FORM_ERROR": {
       "REQUIRED": "Le champ est requis",
       "MIN_LENGTH": "La taille minimum requise est {{value}}",
@@ -256,10 +259,12 @@
     "GENERIC_BUTTON": {
       "DISCOVER_STUDIO": "Visiter le Studio",
       "MORE_PRODUCT": "Shop",
+      "NO": "Non",
       "SEE_MORE": "Voir plus",
       "SEND": "Envoyer",
       "SPOTIFY": "Les meilleurs playlists Spotify",
-      "VALIDATE": "Valider"
+      "VALIDATE": "Valider",
+      "YES": "Oui"
     }
   }
 }

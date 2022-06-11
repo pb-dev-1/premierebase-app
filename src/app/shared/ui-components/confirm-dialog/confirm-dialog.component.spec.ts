@@ -1,20 +1,21 @@
 import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing'
 
-import {GenericButtonComponent} from './generic-button.component'
+import {ConfirmDialogComponent} from './confirm-dialog.component'
 
-describe('GenericButtonComponent', () => {
-  let component: GenericButtonComponent
-  let fixture: ComponentFixture<GenericButtonComponent>
+
+describe('ConfirmDialogComponent', () => {
+  let component: ConfirmDialogComponent;
+  let fixture: ComponentFixture<ConfirmDialogComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenericButtonComponent ]
+      declarations: [ ConfirmDialogComponent ]
     })
     .compileComponents()
   }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GenericButtonComponent)
+    fixture = TestBed.createComponent(ConfirmDialogComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })
