@@ -71,10 +71,18 @@
         (click)="resetFormat()"
       >{{'ADMIN.ILLUSTRATION.FORM.RESET_FORMAT' | translate}}</button>
 
-      <mat-form-field appearance="standard">
+      
         <mat-label translate>ADMIN.ILLUSTRATION.FORM.DETAILS</mat-label>
-        <textarea matInput formControlName="details" required></textarea>
-      </mat-form-field>
+        <div class="NgxEditor__Wrapper">
+          <ngx-editor-menu [toolbar]="toolbar" [editor]="editor"></ngx-editor-menu>
+          <ngx-editor
+            formControlName="details"
+            [editor]="editor"
+            [disabled]="false"
+            [placeholder]="'Type here...'"
+          ></ngx-editor>
+        </div>
+
 
       <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%">
         <mat-label translate>ADMIN.ILLUSTRATION.FORM.COLLECTION</mat-label>

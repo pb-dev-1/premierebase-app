@@ -65,7 +65,7 @@
 
       <mat-tab-group>
         <mat-tab [label]="'ILLUSTRATION.DETAILS' | translate">
-          {{illustration.details}}
+          <span [innerHTML]="illustration.details"></span>
         </mat-tab>
         <mat-tab [label]="'ILLUSTRATION.DELIVERY' | translate">
           Content 2

@@ -2,6 +2,7 @@ import {Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleCha
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser'
 import {tap} from 'rxjs/operators'
+import {Editor, Toolbar} from 'ngx-editor'
 
 import {Illustration} from '@resources/illustration/illustration.model'
 import {CollectionService} from '@resources/collection/collection.service'
@@ -27,6 +28,17 @@ export class FormComponent implements OnChanges {
   detailsFile: File[] = []
   detailsUrls: {url: SafeUrl, name: string}[] = []
   submitted = false
+  editor: Editor
+  toolbar: Toolbar = [
+    ['bold', 'italic'],
+    ['underline', 'strike'],
+    ['code', 'blockquote'],
+    ['ordered_list', 'bullet_list'],
+    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+    ['link', 'image'],
+    ['text_color', 'background_color'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+  ]
 
   collections$ = this.collectionService.collections$.pipe(
     tap(collections => {if (!collections) {this.collectionService.getCollections()}})
@@ -63,10 +75,19 @@ export class FormComponent implements OnChanges {
     this.buildForm()
   }
 
+  ngOnInit(): void {
+    this.editor = new Editor()
+  }
+
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes?.illustration) {
      this.buildForm()
     }
+  }
+
+  ngOnDestroy(): void {
+    this.editor.destroy()
   }
 
   onSubmit(illustration: Illustration) {
