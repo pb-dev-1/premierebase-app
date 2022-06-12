@@ -4,6 +4,7 @@ import {BehaviorSubject} from 'rxjs'
 import {BasketItem} from '@app/resources/basket/basket.model'
 import {BasketService} from '@app/resources/basket/basket.service'
 import {environment} from '@env/environment'
+import {PromoService} from '@app/resources/promo/promo.service'
 
 @Component({
   selector: 'pb-basket',
@@ -15,8 +16,12 @@ export class BasketComponent {
   savedProducts$: BehaviorSubject<BasketItem[]> = this.basketService.products$
   env = environment
   code = undefined
+  discount = undefined
 
-  constructor(private basketService: BasketService) { }
+  constructor(
+    private basketService: BasketService,
+    private promoService: PromoService,
+  ) { }
 
   get totalHT() {
     let t = 0
@@ -26,12 +31,20 @@ export class BasketComponent {
     return t
   }
 
+  get totalHTWithDiscount() {
+    if (this.discount) {
+      return this.totalHT - (this.totalHT * this.discount / 100)
+    }
+
+    return this.totalHT
+  }
+
   get delivery() {
     return 5
   }
 
   get total() {
-    let t = this.totalHT
+    let t = this.totalHTWithDiscount
     if (t < 200) {
       t += this.delivery
     }
@@ -46,6 +59,13 @@ export class BasketComponent {
       } 
     })
     this.basketService.updateProducts(savedProducts)
+  }
+
+  checkPromoCode() {
+    this.promoService.checkPromo(this.code).subscribe(promo => {
+      this.discount = promo.discount
+      this.code = undefined
+    })
   }
 
   removeFromBasket(item: BasketItem) {
