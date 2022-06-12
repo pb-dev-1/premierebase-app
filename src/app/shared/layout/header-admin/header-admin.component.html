@@ -39,6 +39,12 @@
       [class.active]="route === 'newsletter'"
       (click)="navigate('admin/newsletter')"
     >{{'NAV.TOP.NEWSLETTER' | translate}}</div>
+
+    <div
+      class="nav-bar-link"
+      [class.active]="route === 'promo'"
+      (click)="navigate('admin/promos')"
+    >{{'NAV.TOP.PROMO' | translate}}</div>
   </div>
 
   <div fxHide.gt-sm>

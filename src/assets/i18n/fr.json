@@ -107,6 +107,29 @@
         "TITLE": "Newsletter"
       }
     },
+    "PROMO": {
+      "EDIT": {
+        "TITLE": "Modifier le code promo"
+      },
+      "FORM": {
+        "CREATE": "Créer",
+        "DISCOUNT": "Réduction",
+        "EDIT": "Modifier",
+        "END_DATE": "Date de fin",
+        "PROMO": "Code promo",
+        "START_DATE": "Date de début"
+      },
+      "LIST": {
+        "DISCOUNT": "Réduction",
+        "END_DATE": "Date de fin",
+        "PROMO": "Code promo",
+        "START_DATE": "Date de début",
+        "TITLE": "Code promos"
+      },
+      "NEW": {
+        "TITLE": "Nouveau code promo"
+      }
+    },
     "THEME": {
       "EDIT": {
         "TITLE": "Modifier le thème"
@@ -229,6 +252,7 @@
       "LOGIN": "Me connecter",
       "LOGOUT": "Me déconnecter",
       "NEWSLETTER": "Newsletter",
+      "PROMO": "Code promo",
       "SIGNUP": "M'inscrire",
       "THEME": "Thèmes"
     }

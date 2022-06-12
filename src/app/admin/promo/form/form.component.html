@@ -1,0 +1,44 @@
+<div fxLayout="column">
+  <mat-card class="form-container">
+    <form
+      [formGroup]="promoForm"
+      (ngSubmit)="onSubmit(promoForm.value)"
+      fxLayout="column"
+    >
+      <div fxLayout="row wrap" fxLayoutGap="2%">
+        <mat-form-field appearance="standard" fxFlex="1 1 49%">
+          <mat-label translate>ADMIN.PROMO.FORM.PROMO</mat-label>
+          <input matInput formControlName="code">
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" fxFlex="1 1 49%">
+          <mat-label translate>ADMIN.PROMO.FORM.DISCOUNT</mat-label>
+          <input matInput formControlName="discount">
+          <span matSuffix>%</span>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row wrap" fxLayoutGap="2%">
+        <mat-form-field appearance="fill" fxFlex="1 1 49%">
+          <mat-label translate>ADMIN.PROMO.FORM.START_DATE</mat-label>
+          <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+          <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill" fxFlex="1 1 49%">
+          <mat-label translate>ADMIN.PROMO.FORM.END_DATE</mat-label>
+          <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+          <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+          <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <button class="create" mat-raised-button color="primary" type="submit">
+        {{promo ? ('ADMIN.PROMO.FORM.EDIT' | translate) : 'ADMIN.PROMO.FORM.CREATE' | translate}}
+      </button>
+    </form>
+  </mat-card>
+</div>
+
+
+

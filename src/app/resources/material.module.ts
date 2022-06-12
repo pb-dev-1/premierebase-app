@@ -12,6 +12,8 @@ import {MatCardModule} from '@angular/material/card'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import {MatCheckboxModule} from '@angular/material/checkbox'
 import {MatDialogModule} from '@angular/material/dialog'
+import {MatDatepickerModule} from '@angular/material/datepicker'
+import {MatNativeDateModule} from '@angular/material/core'
 
 @NgModule({
   declarations: [],
@@ -29,6 +31,8 @@ import {MatDialogModule} from '@angular/material/dialog'
     MatCardModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   exports: [
     MatIconModule,
@@ -44,6 +48,7 @@ import {MatDialogModule} from '@angular/material/dialog'
     MatCardModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatDatepickerModule,
   ],
 })
 export class MaterialModule {}

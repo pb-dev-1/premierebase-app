@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'newsletter',
     loadChildren: () => import('./newsletter/newsletter.module').then(m => m.NewsletterModule)
   },
+  {
+    path: 'promos',
+    loadChildren: () => import('./promo/promo.module').then(m => m.PromoModule)
+  },
 ]
 
 @NgModule({

@@ -1,0 +1,11 @@
+:host {
+
+  .mat-table {
+    width: 100%;
+
+    .mat-cell, .mat-header-cell {
+      padding: 15px;
+      min-width: 80px;
+    }
+  }
+}

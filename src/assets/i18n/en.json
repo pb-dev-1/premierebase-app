@@ -107,6 +107,29 @@
         "TITLE": "Newsletter"
       }
     },
+    "PROMO": {
+      "EDIT": {
+        "TITLE": "Edit promo code"
+      },
+      "FORM": {
+        "CREATE": "Create",
+        "DISCOUNT": "Discount",
+        "EDIT": "Edit",
+        "END_DATE": "End date",
+        "PROMO": "Promo code",
+        "START_DATE": "Start date"
+      },
+      "LIST": {
+        "DISCOUNT": "Discount",
+        "END_DATE": "End date",
+        "PROMO": "Promo code",
+        "START_DATE": "Start date",
+        "TITLE": "Promo codes"
+      },
+      "NEW": {
+        "TITLE": "New promo code"
+      }
+    },
     "THEME": {
       "EDIT": {
         "TITLE": "Edit theme"
@@ -220,6 +243,7 @@
       "CONTACT": "Contact"
     },
     "TOP": {
+      "ACCOUNT": "My account",
       "BASKET": "Basket",
       "CATEGORY": "Categories",
       "COLLECTION": "Collections",
@@ -228,7 +252,7 @@
       "LOGIN": "Sign in",
       "LOGOUT": "Logout",
       "NEWSLETTER": "Newsletter",
-      "ACCOUNT": "My account",
+      "PROMO": "Promo code",
       "SIGNUP": "Sign up",
       "THEME": "Themes"
     }

@@ -1,0 +1,12 @@
+<pb-page-admin-layout>
+  <ng-container page>
+
+    <h1 translate>ADMIN.PROMO.EDIT.TITLE</h1>
+
+    <pb-promo-form
+      [promo]="promo$ | async"
+      (submitForm)="updatePromo($event)"
+    ></pb-promo-form>
+
+  </ng-container>
+</pb-page-admin-layout>
