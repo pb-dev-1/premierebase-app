@@ -8,17 +8,13 @@
       </div>
 
       <!-- Newest items -->
-      <div fxLayout="column" fxLayoutAlign="center center" class="section-container">
+      <div class="section-container flex flex-col items-center justify-center">
         <h2 class="section-title">{{'HOME.NEWEST_TITLE' | translate}}</h2>
         <pb-items-container [items]="newestItems$ | async" [maxItems]="3" [perLine]="3"></pb-items-container>
       </div>
 
       <!-- Illustrations -->
-      <div
-        fxLayout="column"
-        fxLayoutAlign="center center"
-        class="section-container"
-      >
+      <div class="section-container flex flex-col items-center justify-center">
         <h2 class="section-title">{{'HOME.ILLUSTRATION_TITLE' | translate}}</h2>
         <pb-items-container [items]="illustrations$ | async" [maxItems]="12" [perLine]="4"></pb-items-container>
         <pb-generic-button
@@ -29,27 +25,22 @@
 
       <!-- Collections -->
       <div class="collection-section">
-        <div
-          fxLayout="row"
-          fxLayoutAlign="center center"
-          fxLayoutAlign.gt-sm="space-between center"
-          class="collection-title-row"
-        >
+        <div class="collection-title-row flex flex-row justify-between items-center max-md:justify-center">
           <h2>{{'HOME.COLLECTIONS_TITLE' | translate}}</h2>
           <pb-arrow-link
             *ngIf="(collections$ | async)?.length"
             [label]="'HOME.COLLECTIONS_LINK' | translate"
             link="/collections"
-            fxHide.lt-md
+            class="block max-md:hidden"
           ></pb-arrow-link>
         </div>
 
-        <div
-          fxLayout="row"
-          class="collection-image-row"
-        >
+        <div class="collection-image-row flex flex-row">
           <ng-container *ngFor="let collection of collections$ | async">
-            <div fxLayout="column" fxLayoutAlign="flex-start center" (click)="goToCollection(collection._id)">
+            <div
+              class="flex flex-col justify-start items-center max-md:justify-center"
+              (click)="goToCollection(collection._id)"
+            >
               <img 
                 class="collection-image"
                 [src]="env.uploads + collection.images.home"
@@ -58,25 +49,20 @@
               <h3>{{collection.label}}</h3>
               <p>{{collection.theme.label}}</p>
             </div>
-            <div class="forced-gap">&nbsp;</div>
           </ng-container>
         </div>
 
         <p
           *ngIf="!(collections$ | async)?.length"
-          style="padding: 0 50px;"
-        >Désolé ! Nous n'avons pas de collection pour le moment.</p>
+          class="px-[75px]"
+        >{{'HOME.NO_COLLECTIONS' | translate}}</p>
       </div>
 
       <!-- Studio -->
-      <div fxLayout="column wrap" fxLayout.gt-xs="row wrap">
-        <div fxFlex="50%" class="studio-image"></div>
-        <div fxFlex="50%">
-          <div
-            fxLayout="column"
-            fxLayoutAlign="space-between"
-            class="studio-description"
-          >
+      <div class="flex flex-row flex-wrap max-sm:flex-col">
+        <div class="studio-image"></div>
+        <div class="studio-description-container">
+          <div class="studio-description flex flex-col justify-between gap-y-2">
             <div>
               <h2 class="section-title-2">{{'HOME.STUDIO_TITLE' | translate}}</h2>
               <h5>{{'HOME.STUDIO.SECTION_1' | translate}}</h5>
@@ -94,20 +80,17 @@
       <!-- Collaboration -->
       <div class="collection-section">
         <div
-          fxLayout="row"
-          fxLayoutAlign="center center"
-          fxLayoutAlign.gt-sm="space-between center"
-          class="collection-title-row"
+          class="collection-title-row flex flex-row justify-between items-center max-md:justify-center"
         >
           <h2>{{'HOME.COLLECTION_TITLE' | translate}}</h2>
           <pb-arrow-link
             [label]="'HOME.COLLECTION_LINK' | translate"
             link="/collections"
-            fxHide.lt-md
+            class="block max-md:hidden"
           ></pb-arrow-link>
         </div>
 
-        <p style="padding: 0 75px;">Désolé ! Nous n'avons pas de collaboration pour le moment.</p>
+        <p class="px-[75px]">{{'HOME.NO_COLLECTION' | translate}}</p>
       </div>
 
       <pb-radio-banner></pb-radio-banner>

@@ -7,8 +7,8 @@
     (mouseover)="this.initSecondImage()"
     (mouseout)="this.initFirstImage()"
   >
-  <div fxLayout="column" fxLayoutGap="5px">
-    <span class="item-label">{{item.label}}</span>
+  <div class="flex flex-col gap-y-1">
+    <span>{{item.label}}</span>
     <span class="item-price">{{minPrice() | currency: 'EUR'}} - {{maxPrice() | currency: 'EUR'}}</span>
   </div>
 </div>

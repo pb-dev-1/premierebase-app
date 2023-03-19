@@ -1,10 +1,10 @@
 <ngx-masonry class="mansory-list" [options]="options">
-    <div
-        ngxMasonryItem
-        *ngFor="let image of images"
-        [prepend]="false"
-        class="masonry-item"
-    >
-        <img [src]="env.uploads + image">
-    </div>
+  <div
+    *ngFor="let image of images"
+    ngxMasonryItem
+    [prepend]="false"
+    class="masonry-item"
+  >
+    <img [src]="env.uploads + image">
+  </div>
 </ngx-masonry>

@@ -1,11 +1,9 @@
 <div
-  [fxLayout]="inline ? 'row' : 'column'"
-  fxLayoutAlign="flex-start center"
-  [fxLayoutGap]="inline ? '15px' : '5px'"
-  class="quantity-container {{size}}"
+  class="quantity-container {{size}} flex justify-start items-center"
+  [ngClass]="{'flex-row gap-x-4': inline, 'flex-col gap-y-1': !inline}"
 >
   <div class="quantity-title" translate>ILLUSTRATION.QUANTITY</div>
-  <div fxLayout="row" fxLayoutAlign="space-between center" class="quantity-input">
+  <div class="quantity-input flex flex-row justify-between items-center">
     <button
       mat-button
       [disabled]="quantity < 2"

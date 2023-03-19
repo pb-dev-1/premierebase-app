@@ -34,31 +34,37 @@
       background: url('../../../assets/images/backgrounds/home/studio-bg.png') no-repeat center center;
       background-size: cover;
       overflow: hidden;
+      flex: 1 1 50%;
     }
 
-    .studio-description {
-      padding: 0 55px;
-      max-width: 640px;
+    .studio-description-container {
+      flex: 1 1 50%;
 
-      .section-title-2 {
-        margin-bottom: 32px;
-      }
-
-      h5 {
-        font-size: 16px;
-        font-family: Fixture-Expanded-SemiBold, Roboto, sans-serif;
-        margin: 20px 0 0;
-      }
-
-      p {
-        font-size: 12px;
-        font-family: Fixture-Expanded-Light, Roboto, sans-serif;
-      }
-
-      pb-generic-button {
-        margin: 15px 0;
+      .studio-description {
+        padding: 0 55px;
+        max-width: 640px;  
+  
+        .section-title-2 {
+          margin-bottom: 32px;
+        }
+  
+        h5 {
+          font-size: 16px;
+          font-family: Fixture-Expanded-SemiBold, Roboto, sans-serif;
+          margin: 20px 0 0;
+        }
+  
+        p {
+          font-size: 12px;
+          font-family: Fixture-Expanded-Light, Roboto, sans-serif;
+        }
+  
+        pb-generic-button {
+          margin: 15px 0;
+        }
       }
     }
+    
 
     .collection-section {
       padding: 35px 0;
@@ -107,12 +113,10 @@
     }  
   }
 
-  @media (max-width: 959px) {
+  @media(max-width: 768px) {
     .home {
-      .collection-section {
-        .collection-image-row {
-          padding: 0 calc((100% - 300px) / 2);
-        }
+      .studio-description-container {
+        flex: 1 1 100%;
       }
     }
   }

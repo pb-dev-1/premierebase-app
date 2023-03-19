@@ -7,9 +7,6 @@
   width: 100%;
 
   .nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
     padding: 30px 30px 0;
     min-height: 50px;
 
@@ -17,30 +14,25 @@
       width: 85px;
     }
 
-    .nav-bar-links {
-      display: flex;
-      align-items: center;
+    .nav-bar-link {
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 14.7px;
 
-      .nav-bar-link {
-        margin-right: 10px;
-        cursor: pointer;
-        font-size: 14.7px;
+      &.black {
+        color: black;
+      }
 
-        &.black {
-          color: black;
-        }
+      &.white {
+        color: white;
+      }
 
-        &.white {
-          color: white;
-        }
+      &:last-child {
+        margin-right: 0;
+      }
 
-        &:last-child {
-          margin-right: 0;
-        }
-
-        &.active {
-          font-weight: 600;
-        }
+      &.active {
+        font-weight: 600;
       }
     }
 

@@ -1,23 +1,16 @@
-<div fxLayout="column">
-  <mat-card class="form-container">
-    <form
-      [formGroup]="themeForm"
-      (ngSubmit)="onSubmit(themeForm.value)"
-      fxLayout="column"
-    >
-      <div fxLayout="row wrap">
-        <mat-form-field appearance="standard" fxFlex="1 1 100%">
-          <mat-label translate>ADMIN.THEME.FORM.THEME</mat-label>
-          <input matInput formControlName="label">
-        </mat-form-field>
-      </div>
+<mat-card class="form-container">
+  <form
+    [formGroup]="themeForm"
+    (ngSubmit)="onSubmit(themeForm.value)"
+    class="flex flex-col"
+  >
+    <mat-form-field appearance="standard">
+      <mat-label translate>ADMIN.THEME.FORM.THEME</mat-label>
+      <input matInput formControlName="label">
+    </mat-form-field>
 
-      <button class="create" mat-raised-button color="primary" type="submit">
-        {{theme ? ('ADMIN.THEME.FORM.EDIT' | translate) : 'ADMIN.THEME.FORM.CREATE' | translate}}
-      </button>
-    </form>
-  </mat-card>
-</div>
-
-
-
+    <button class="create" mat-raised-button color="primary" type="submit">
+      {{theme ? ('ADMIN.THEME.FORM.EDIT' | translate) : 'ADMIN.THEME.FORM.CREATE' | translate}}
+    </button>
+  </form>
+</mat-card>

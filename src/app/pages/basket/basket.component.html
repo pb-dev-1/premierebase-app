@@ -19,7 +19,7 @@
           <ng-container matColumnDef="label">
             <mat-header-cell *matHeaderCellDef translate></mat-header-cell>
             <mat-cell *matCellDef="let element">
-              <div fxLayout="column" fxLayoutAlign="space-between">
+              <div class="flex flex-col" fxLayout="column" fxLayoutAlign="space-between">
                 <span class="element-title">{{element.label}}</span>
               </div>
             </mat-cell>

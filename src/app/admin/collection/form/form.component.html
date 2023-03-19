@@ -1,120 +1,117 @@
-<div fxLayout="column">
-  <mat-card class="form-container">
-    <form
-      [formGroup]="collectionForm"
-      (ngSubmit)="onSubmit(collectionForm.value)"
-      fxLayout="column"
-    >
-      <div fxLayout="row wrap">
-        <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
-          <mat-label translate>ADMIN.COLLECTION.FORM.LABEL</mat-label>
-          <input matInput formControlName="label">
-        </mat-form-field>
-
-        <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
-          <mat-label translate>ADMIN.COLLECTION.FORM.THEME</mat-label>
-          <mat-select formControlName="theme">
-            <mat-option *ngFor="let theme of themes$ | async" [value]="theme._id">
-              {{theme.label}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-
-      <mat-form-field appearance="standard">
-        <mat-label translate>ADMIN.COLLECTION.FORM.DESCRIPTION</mat-label>
-        <textarea matInput formControlName="description"></textarea>
+<mat-card class="form-container">
+  <form
+    [formGroup]="collectionForm"
+    (ngSubmit)="onSubmit(collectionForm.value)"
+    fxLayout="column"
+  >
+    <div fxLayout="row wrap">
+      <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
+        <mat-label translate>ADMIN.COLLECTION.FORM.LABEL</mat-label>
+        <input matInput formControlName="label">
       </mat-form-field>
 
-      <mat-slide-toggle formControlName="collaboration"></mat-slide-toggle>
+      <mat-form-field appearance="standard" fxFlex.gt-xs="1 1 50%" fxFlex.xs="1 1 100%" style="padding: 0 10px 0 0">
+        <mat-label translate>ADMIN.COLLECTION.FORM.THEME</mat-label>
+        <mat-select formControlName="theme">
+          <mat-option *ngFor="let theme of themes$ | async" [value]="theme._id">
+            {{theme.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-      <ng-container *ngIf="collectionForm.get('collaboration').value === true">
-        <mat-form-field appearance="standard">
-          <mat-label translate>ADMIN.COLLECTION.FORM.COLLABORATION_DESCRIPTION</mat-label>
-          <textarea matInput formControlName="collaborationDescription"></textarea>
-        </mat-form-field>
-      </ng-container>
+    <mat-form-field appearance="standard">
+      <mat-label translate>ADMIN.COLLECTION.FORM.DESCRIPTION</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
 
-      <ng-container>
-        <div fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="25px">
-          <div fxLayout="column">
-            <h5 translate>ADMIN.COLLECTION.FORM.HOME</h5>
-            <img
-              *ngIf="homeUrl || collection?.images?.home"
-              class="item-img"
-              [src]="homeUrl || env.uploads + collection.images.home"
-              [alt]="collection?.label"
-            >
-            <input type="file" id="home" (change)="onSelectHome($event)" #home style="display: none">
-            <button mat-button (click)="selectHome()" type="button">
-              {{'ADMIN.COLLECTION.FORM.SELECT_IMAGE' | translate}}
-            </button>
-          </div>
+    <mat-slide-toggle formControlName="collaboration"></mat-slide-toggle>
 
-          <div fxLayout="column">
-            <h5 translate>ADMIN.COLLECTION.FORM.COLLECTION</h5>
-            <img
-              *ngIf="collectionUrl || collection?.images?.collections"
-              class="item-img"
-              [src]="collectionUrl || env.uploads + collection.images.collections"
-              [alt]="collection?.label"
-            >
-            <input type="file" id="collection" (change)="onSelectCollection($event)" #col style="display: none">
-            <button mat-button (click)="selectCollection()" type="button">
-              {{'ADMIN.COLLECTION.FORM.SELECT_IMAGE' | translate}}
-            </button>
-          </div>
-        </div>
+    <ng-container *ngIf="collectionForm.get('collaboration').value === true">
+      <mat-form-field appearance="standard">
+        <mat-label translate>ADMIN.COLLECTION.FORM.COLLABORATION_DESCRIPTION</mat-label>
+        <textarea matInput formControlName="collaborationDescription"></textarea>
+      </mat-form-field>
+    </ng-container>
 
+    <ng-container>
+      <div fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="25px">
         <div fxLayout="column">
-          <h5 translate>ADMIN.COLLECTION.FORM.DETAILS</h5>
-
-          <div fxLayout="row wrap" fxLayoutGap="25px">
-            <ng-container *ngFor="let detail of collection?.images?.details">
-              <div class="image-container">
-                <button
-                  mat-mini-fab
-                  color="warn"
-                  aria-label="delete image"
-                  (click)="onDeleteDetail(collection, detail)"
-                ><mat-icon>close</mat-icon></button>
-                <img
-                  class="item-img"
-                  [src]="env.uploads + detail"
-                  [alt]="collection?.label"
-                >
-              </div>
-            </ng-container>
-            <ng-container *ngFor="let file of detailsUrls">
-              <div class="image-container">
-                <button
-                  mat-mini-fab
-                  color="warn"
-                  aria-label="delete image"
-                  (click)="onDeleteDetail(collection, file)"
-                ><mat-icon>close</mat-icon></button>
-                <img
-                  *ngIf="file"
-                  class="item-img"
-                  [src]="file.url"
-                  [alt]="collection?.label"
-                >
-              </div>
-            </ng-container>
-          </div>
-
-          <input type="file" id="details" multiple (change)="onSelectDetails($event)" #details style="display: none">
-          <button mat-button (click)="selectDetails()" type="button">
-            {{'ADMIN.COLLECTION.FORM.SELECT_IMAGES' | translate}}
+          <h5 translate>ADMIN.COLLECTION.FORM.HOME</h5>
+          <img
+            *ngIf="homeUrl || collection?.images?.home"
+            class="item-img"
+            [src]="homeUrl || env.uploads + collection.images.home"
+            [alt]="collection?.label"
+          >
+          <input type="file" id="home" (change)="onSelectHome($event)" #home style="display: none">
+          <button mat-button (click)="selectHome()" type="button">
+            {{'ADMIN.COLLECTION.FORM.SELECT_IMAGE' | translate}}
           </button>
         </div>
 
-      </ng-container>
+        <div fxLayout="column">
+          <h5 translate>ADMIN.COLLECTION.FORM.COLLECTION</h5>
+          <img
+            *ngIf="collectionUrl || collection?.images?.collections"
+            class="item-img"
+            [src]="collectionUrl || env.uploads + collection.images.collections"
+            [alt]="collection?.label"
+          >
+          <input type="file" id="collection" (change)="onSelectCollection($event)" #col style="display: none">
+          <button mat-button (click)="selectCollection()" type="button">
+            {{'ADMIN.COLLECTION.FORM.SELECT_IMAGE' | translate}}
+          </button>
+        </div>
+      </div>
 
-      <button class="create" mat-raised-button color="primary" type="submit">
-        {{collection ? ('ADMIN.COLLECTION.FORM.EDIT' | translate) : 'ADMIN.COLLECTION.FORM.CREATE' | translate}}
-      </button>
-    </form>
-  </mat-card>
+      <div fxLayout="column">
+        <h5 translate>ADMIN.COLLECTION.FORM.DETAILS</h5>
 
-</div>
+        <div fxLayout="row wrap" fxLayoutGap="25px">
+          <ng-container *ngFor="let detail of collection?.images?.details">
+            <div class="image-container">
+              <button
+                mat-mini-fab
+                color="warn"
+                aria-label="delete image"
+                (click)="onDeleteDetail(collection, detail)"
+              ><mat-icon>close</mat-icon></button>
+              <img
+                class="item-img"
+                [src]="env.uploads + detail"
+                [alt]="collection?.label"
+              >
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let file of detailsUrls">
+            <div class="image-container">
+              <button
+                mat-mini-fab
+                color="warn"
+                aria-label="delete image"
+                (click)="onDeleteDetail(collection, file)"
+              ><mat-icon>close</mat-icon></button>
+              <img
+                *ngIf="file"
+                class="item-img"
+                [src]="file.url"
+                [alt]="collection?.label"
+              >
+            </div>
+          </ng-container>
+        </div>
+
+        <input type="file" id="details" multiple (change)="onSelectDetails($event)" #details style="display: none">
+        <button mat-button (click)="selectDetails()" type="button">
+          {{'ADMIN.COLLECTION.FORM.SELECT_IMAGES' | translate}}
+        </button>
+      </div>
+
+    </ng-container>
+
+    <button class="create" mat-raised-button color="primary" type="submit">
+      {{collection ? ('ADMIN.COLLECTION.FORM.EDIT' | translate) : 'ADMIN.COLLECTION.FORM.CREATE' | translate}}
+    </button>
+  </form>
+</mat-card>

@@ -1,7 +1,7 @@
 <pb-page-admin-layout>
   <ng-container page>
 
-    <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="flex flex-row justify-between items-center">
       <h1 translate>ADMIN.COLLECTION.LIST.TITLE</h1>
       <button
         routerLink="/admin/collections/new"
@@ -42,7 +42,7 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <div fxLayout="row">
+          <div class="flex flex-row">
             <button mat-icon-button color="primary" [routerLink]="['/admin/collections/' + element._id + '/edit']">
               <mat-icon>edit</mat-icon>
             </button>

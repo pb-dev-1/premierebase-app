@@ -3,7 +3,7 @@
     <img class="logo" src="assets/images/logos/logo-2.png">
   </a>
 
-  <div class="nav-bar-links" fxHide.lt-md [ngStyle]="{'color': color}">
+  <div class="nav-bar-links flex flex-row items-center max-lg:hidden" [ngStyle]="{'color': color}">
     <div
       class="nav-bar-link"
       [class.active]="route === 'illustrations'"
@@ -47,7 +47,7 @@
     >{{'NAV.TOP.PROMO' | translate}}</div>
   </div>
 
-  <div fxHide.gt-sm>
+  <div class="hidden max-lg:block">
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>

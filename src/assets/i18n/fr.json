@@ -197,8 +197,12 @@
   "HOME": {
     "COLLECTIONS_TITLE": "Collections",
     "COLLECTIONS_LINK": "Découvrez les collections",
+    "COLLECTION_TITLE": "Blue Garage x Premiere Base",
+    "COLLECTION_LINK": "Découvrir la collab",
     "ILLUSTRATION_TITLE": "Produits",
     "NEWEST_TITLE": "Nouveautés",
+    "NO_COLLECTIONS": "Désolé ! Nous n'avons pas de collection pour le moment.",
+    "NO_COLLECTION": "Désolé ! Nous n'avons pas de collaboration pour le moment.",
     "STUDIO_TITLE": "Le Studio",
     "STUDIO": {
       "SECTION_1": "Illustration Personnalisées",
@@ -207,9 +211,7 @@
       "DESCRIPTION_2": "Un projet de design, branding, typographie, nouveaux produits ?\n Nous mettons en place ensemble une ligne artistique cohérente avec votre univer s de marque.",
       "SECTION_3": "Habillage d’Espace",
       "DESCRIPTION_3": "Visual merchandising, scénographie, opération événementielle en magasin, impressions grand formats, nous habillons vos espaces et dynalisons vos points de vents"
-    },
-    "COLLECTION_TITLE": "Blue Garage x Premiere Base",
-    "COLLECTION_LINK": "Découvrir la collab"
+    }
   },
   "ILLUSTRATIONS": {
     "TITLE": "Shop"

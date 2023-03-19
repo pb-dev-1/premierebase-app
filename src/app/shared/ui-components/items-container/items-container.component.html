@@ -1,10 +1,6 @@
-<div
-  fxLayout="row wrap"
-  fxLayoutAlign="center center"
-  class="items-container"
->
+<div class="flex flex-row flex-wrap items-center justify-center">
   <ng-container *ngFor="let item of getItems()">
-    <pb-item-card [item]="item"></pb-item-card>
+    <pb-item-card class="max-w-xs" [item]="item"></pb-item-card>
   </ng-container>
   <p *ngIf="!items?.length">Désolé ! Nous n'avons pas de produit disponible pour le moment.</p>
 </div>

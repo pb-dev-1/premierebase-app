@@ -1,10 +1,14 @@
-<div class="nav-bar" clickOutside (onClickOutside)="toggleAuthenticationPopup(false)">
+<div
+  class="nav-bar flex flex-row items-center justify-between"
+  clickOutside
+  (onClickOutside)="toggleAuthenticationPopup(false)"
+>
   <a routerLink="/">
     <img *ngIf="color === 'white'" class="logo" src="assets/images/logos/logo-1.svg">
     <img *ngIf="color === 'black'" class="logo" src="assets/images/logos/logo-2.png">
   </a>
 
-  <div class="nav-bar-links" fxHide.lt-md>
+  <div class="flex flex-row items-center max-lg:hidden">
     <!-- <div class="nav-bar-link {{color}}">
       <mat-icon>search</mat-icon>
     </div> -->
@@ -14,15 +18,15 @@
     </div>
 
     <div 
-      class="nav-bar-link {{color}}"
       *ngIf="authService.isLoggedIn()"
+      class="nav-bar-link {{color}}"
       [ngClass]="{'active': route === 'account'}"
       (click)="navigate('account')"
     >{{'NAV.TOP.ACCOUNT' | translate}}</div>
 
     <div 
-      class="nav-bar-link {{color}}"
       *ngIf="!authService.isLoggedIn()"
+      class="nav-bar-link {{color}}"
       [ngClass]="{'active': showAuthenticationPop}"
       (click)="toggleAuthenticationPopup(!showAuthenticationPop)"
     >{{'NAV.TOP.ACCOUNT' | translate}}</div>
@@ -34,13 +38,13 @@
     >{{'NAV.TOP.BASKET' | translate}} <span *ngIf="(savedProducts$ | async).length">({{nbSavedProducts}})</span></div>
 
     <div
-      class="nav-bar-link {{color}}"
       *ngIf="authService.isLoggedIn()"
+      class="nav-bar-link {{color}}"
       (click)="authService.logout()"
     >{{'NAV.TOP.LOGOUT' | translate}}</div>
   </div>
 
-  <div fxHide.gt-sm>
+  <div class="hidden max-lg:block">
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
@@ -58,7 +62,7 @@
   <pb-authentication-popup *ngIf="showAuthenticationPop && !authService.isLoggedIn()"></pb-authentication-popup>
 </div>
 
-<div class="side-nav" fxHide.xs fxHide.sm>
+<div class="side-nav max-lg:hidden">
   <ul>
     <li *ngFor="let nav of navs">
       <a
